@@ -1,14 +1,14 @@
-<html>
+<html> <!-- missing <!DOCTYPE html> -->
 <head>
     
-    <html language="en">
-    
+    <html language="en"> <!-- this should be below <html> tag-->
+    <!-- missing charset and viewport-->
     <title>Error-Filled Page</title>
-    
+<!-- no closing tag for head-->    
 <body>
-    <h1>Welcome to My Error-Filled Page
+    <h1>Welcome to My Error-Filled Page <!--missing closing tag for <h1>-->
     
-    This is a paragraph.</p>
+    This is a paragraph.</p> <!--missing opening tag <p>-->
     
     <ol>
         <li>Item 1</li>
@@ -16,18 +16,18 @@
         <li>Item 3</li>
         <li>Item 4</li>
         <li>Item 5</li>
-        </li>Item 6</li>
+        </li>Item 6</li> <!-- uses </li> instead of <li> as an opening tag-->
         <li>Item 7</li>
         <li>Item 8</li>
         <li>Item 9</li>
         <li>Item 10</li>
-    </ul>
+    </ul> <!-- uses </ul> instead of </ol> as a closing tag -->
 
-    <p>This is another paragraph.
+    <p>This is another paragraph. <!-- missing </p> closing tag -->
     
-    <img src="Image.png">
+    <img src="Image.png"> <!-- missing alt to describe the image for users who don't have images loaded -->
 
-    <a href="find_errors_2.html" target="_blank">Click me!</img>
+    <a href="find_errors_2.html" target="_blank">Click me!</img> <!-- uses </img> instead of </a> -->
 
     <table>
         <tr>
@@ -36,32 +36,32 @@
         </tr>
         <tr>
             <td>John</td>
-            <td>25<td>
+            <td>25<td> <!-- uses <td> as a closing tag instead of </td> -->
         </tr>
         <tr>
             <td>Jane</td>
             <td>30</td>
         </tr>
-    
-    <img source="error.jpeg" alt="Error Image">
+    <!-- missing </table> closing tag-->
+    <img source="error.jpeg" alt="Error Image"> <!-- two errors, 1: uses source instead of src. 2: uses error.jpeg instead of error.jpg-->
 
-    This is a paragraph with strikethrough text.
+    This is a paragraph with strikethrough text. <!-- 1. no paragraph tags/missing <p> and </p> tags. 2. no <s> tag for strikethrough text/missing <s> and </s> tags for strikethrough text -->
 
-    <p bgcolor="lightgray">Text</p>
+    <p bgcolor="lightgray">Text</p> <!-- doesn't correctly set the background color to lightgray. Instead it needs to use style="background-color:lightgray;" in place of bgcolor="lightgray"-->
 
-    <input type="button" value="Click me">
+    <input type="button" value="Click me"> <!-- no errors?-->
 
-    <!-- This is a comment
+    <!-- This is a comment --> <!-- missing closing tag for comment on line 54 -->
 
-    <a href="#">Link 
+    <a href="#">Link <!-- missing </a> closing tag on line 56, also no link specificed. -->
 
-    <p><em>Underlined text</p></em>
+    <p><em>Underlined text</p></em> <!-- 1. </p> and </em> should be switched on line 68. 2. uses <em> and </em> instead of <u> and </u> for underlined text. -->
 
     <dl>
-        <li>Descriptive Item Title</li>
-        <li>Descriptive Item Text</li>
+        <li>Descriptive Item Title</li> <!-- uses <li> and </li> instead of <dt> and </dt> for descriptive item title on line 61 -->
+        <li>Descriptive Item Text</li> <!-- uses <li> and </li> instead of <dd> and </dd> for descriptive item text on line 62 -->
     </dl>
-    <h2 style="color:Tomato;">Hello World<h3>
+    <h2 style="color:Tomato;">Hello World<h3> <!-- uses <h3> instead of </h2> as a closing tag on line 64 -->
 </body>
 </html>
 <!-- 25 errors on this page-->

@@ -1,2 +1,30 @@
 Group: Tuff Contenders
 Names: Selma-Jane Yavuz, Winnie Burke.
+
+Error 1: missing <!DOCTYPE html> tag on line 1
+Error 2: <html lang = "en"> should be declared right below doctype tag and above head tag on line 4
+Error 3: missing <meta charset="UTF-8"> tag/charset is not set on line 5
+Error 4: missing <meta name="viewport" content="width=device-width, initial-scale=1.0"> tag/viewport is not set on line 5
+Error 5: missing closing tag </head> on line 7
+Error 6: missing closing tag </h1> on line 9
+Error 7: missing opening tag <p> on line 11
+Error 8: uses </li> as an opening tag instead of <li> on line 19
+Error 9: uses </ul> instead of </ol> as a closing tag on line 24
+Error 10: missing </p> closing tag on line 26
+Error 11: missing alt to describe the image for users who don't have images loaded on line 28
+Error 12: uses </img> instead of </a> on line 30
+Error 13: uses <td> as a closing tag instead of </td> on line 39
+Error 14: missing </table> closing tag on line 45
+Error 15: uses source instead of src on line 46
+Error 16: uses error.jpeg instead of error.jpg on line 46
+Error 17: no paragraph tags/missing <p> and </p> tags on line 48
+Error 18: no <s> tag for strikethrough text/missing <s> and </s> tags for strikethrough text on line 48
+Error 19: use style="background-color:lightgray;" in place of bgcolor="lightgray" to get a light gray background color on line 50
+Error 20: missing --> closing tag for comment on line 54
+Error 21: missing </a> closing tag on line 56
+Error 22: </p> and </em> should be switched on line 68
+Error 23: uses <em> and </em> instead of <u> and </u> for underlined text on line 68
+Error 24: uses <li> and </li> instead of <dt> and </dt> for descriptive item title on line 61
+Error 25: uses <li> and </li> instead of <dd> and </dd> for descriptive item text on line 62
+Error 26: uses <h3> instead of </h2> as a closing tag on line 64
+
