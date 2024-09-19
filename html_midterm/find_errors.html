@@ -1,14 +1,17 @@
-<html> <!-- missing <!DOCTYPE html> -->
+<!DOCTYPE html>
+<!-- added language-->
+<html lang="en"> <!-- missing <!DOCTYPE html> -->
 <head>
-    
-    <html language="en"> <!-- this should be below <html> tag-->
-    <!-- missing charset and viewport-->
+    <!-- <html language="en"> this should be below <html> tag + -->
+    <!-- missing charset and viewport, added charset and viewport-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error-Filled Page</title>
-<!-- no closing tag for head-->    
+</head><!-- no closing tag for head, added closing tag-->    
 <body>
-    <h1>Welcome to My Error-Filled Page <!--missing closing tag for <h1>-->
+    <h1>Welcome to My Error-Filled Page</h1> <!--missing closing tag for <h1>, added </h1> to fix this-->
     
-    This is a paragraph.</p> <!--missing opening tag <p>-->
+    <p>This is a paragraph.</p> <!--missing opening tag <p>, added <p> to fix this -->
     
     <ol>
         <li>Item 1</li>
@@ -16,18 +19,18 @@
         <li>Item 3</li>
         <li>Item 4</li>
         <li>Item 5</li>
-        </li>Item 6</li> <!-- uses </li> instead of <li> as an opening tag-->
+        <li>Item 6</li> <!-- uses </li> instead of <li> as an opening tag. To fix this, I replaced </li> with <li> on line 22-->
         <li>Item 7</li>
         <li>Item 8</li>
         <li>Item 9</li>
         <li>Item 10</li>
-    </ul> <!-- uses </ul> instead of </ol> as a closing tag -->
+    </ol> <!-- uses </ul> instead of </ol> as a closing tag. To fix this, I replaced </ul> with </ol> on line 27.-->
 
-    <p>This is another paragraph. <!-- missing </p> closing tag -->
+    <p>This is another paragraph.</p> <!-- missing </p> closing tag. To fix this, I added </p> on line 29.-->
     
-    <img src="Image.png"> <!-- missing alt to describe the image for users who don't have images loaded -->
+    <img src="Image.png" alt="Image shows text saying when it's 2am and your code still isn't working. Then there is an image of a guy in a blue shirt in front a whiteboard saying I don't need sleep, I need answers."> <!-- missing alt to describe the image for users who don't have images loaded. To fix this, I added alt text describing the image on line 31. -->
 
-    <a href="find_errors_2.html" target="_blank">Click me!</img> <!-- uses </img> instead of </a> -->
+    <a href="find_errors_2.html" target="_blank">Click me!</a> <!-- uses </img> instead of </a>. To fix this, I replaced </img> with </a> on line 33. -->
 
     <table>
         <tr>
@@ -36,32 +39,32 @@
         </tr>
         <tr>
             <td>John</td>
-            <td>25<td> <!-- uses <td> as a closing tag instead of </td> -->
+            <td>25</td> <!-- uses <td> as a closing tag instead of </td>. To fix this, I replaced <td> with </td> on line 42. -->
         </tr>
         <tr>
             <td>Jane</td>
             <td>30</td>
         </tr>
-    <!-- missing </table> closing tag-->
-    <img source="error.jpeg" alt="Error Image"> <!-- two errors, 1: uses source instead of src. 2: uses error.jpeg instead of error.jpg-->
+    </table> <!-- missing </table> closing tag. To fix this, I added </table> on line 48. -->
+    <img src="error.jpg" alt="Error Image"> <!-- two errors, 1: uses source instead of src. 2: uses error.jpeg instead of error.jpg. To fix this, I replaced source with src on line 49. To fix this, I deleted an e in "jpeg" on line 49.-->
 
-    This is a paragraph with strikethrough text. <!-- 1. no paragraph tags/missing <p> and </p> tags. 2. no <s> tag for strikethrough text/missing <s> and </s> tags for strikethrough text -->
+    <p><s>This is a paragraph with strikethrough text.</s></p> <!-- 1. no paragraph tags/missing <p> and </p> tags. 2. no <s> tag for strikethrough text/missing <s> and </s> tags for strikethrough text. To fix this I added <p> and </p> on line 51. To fix this, I added <s> and </s> on line 51. -->
 
-    <p bgcolor="lightgray">Text</p> <!-- doesn't correctly set the background color to lightgray. Instead it needs to use style="background-color:lightgray;" in place of bgcolor="lightgray"-->
+    <p style="background-color:lightgray;">Text</p> <!-- doesn't correctly set the background color to lightgray. Instead it needs to use style="background-color:lightgray;" in place of bgcolor="lightgray". To fix this, I replaced bgcolor="lightgray" with style="background-color:lightgray;" on line 53.-->
 
-    <input type="button" value="Click me"> <!-- no errors?-->
+    <input type="button" value="Click me"> <!-- no errors? check this one-->
 
-    <!-- This is a comment --> <!-- missing closing tag for comment on line 54 -->
+    <!-- This is a comment --> <!-- missing closing tag for comment on line 54. To fix this, I added closing tag for comment on line 57. -->
 
-    <a href="#">Link <!-- missing </a> closing tag on line 56, also no link specificed. -->
+    <a href="#">Link</a> <!-- missing </a> closing tag on line 56, also no link specificed. To fix this, I added </a> tag on line 59. -->
 
-    <p><em>Underlined text</p></em> <!-- 1. </p> and </em> should be switched on line 68. 2. uses <em> and </em> instead of <u> and </u> for underlined text. -->
+    <p><em>Underlined text</em></p> <!-- 1. </p> and </em> should be switched on line 68. 2. uses <em> and </em> instead of <u> and </u> for underlined text. 1. To fix this, I switch </p> and </em> on line 61. 2. To fix this, I replaced <em> and </em> with <u> and </u> on line 61.-->
 
     <dl>
-        <li>Descriptive Item Title</li> <!-- uses <li> and </li> instead of <dt> and </dt> for descriptive item title on line 61 -->
-        <li>Descriptive Item Text</li> <!-- uses <li> and </li> instead of <dd> and </dd> for descriptive item text on line 62 -->
+        <dt>Descriptive Item Title</dt> <!-- uses <li> and </li> instead of <dt> and </dt> for descriptive item title on line 61. To fix this, I replaced <li> and </li> with <dt> and </dt> on line 64. -->
+        <dd>Descriptive Item Text</dd> <!-- uses <li> and </li> instead of <dd> and </dd> for descriptive item text on line 62. To fix this, I replaced <li> and </li> with <dd> and </dd> on line 65. -->
     </dl>
-    <h2 style="color:Tomato;">Hello World<h3> <!-- uses <h3> instead of </h2> as a closing tag on line 64 -->
+    <h2 style="color:Tomato;">Hello World</h2> <!-- uses <h3> instead of </h2> as a closing tag on line 64. To fix this I replaced <h3> with </h2> on line 67. -->
 </body>
 </html>
 <!-- 25 errors on this page-->
