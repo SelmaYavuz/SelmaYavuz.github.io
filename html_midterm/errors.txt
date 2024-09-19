@@ -3,31 +3,49 @@ Names: Selma-Jane Yavuz, Winnie Burke.
 
 find_errors.html:
 Error 1: missing <!DOCTYPE html> tag on line 1, now line 2. Added <!DOCTYPE html> on line 1 to fix the error.
-Error 2: <html lang = "en"> should be declared right below doctype tag and above head tag on line 4. Furthermore, "language" is used instead of "lang. To fix this, I moved the tag to above the head tag to line 3 and replaced "language" with "lang".
-Error 3: On line 4, now line 3, "language" was used instead of "lang". To fix this, I replaced "language" with "lang".
-Error 4: missing <meta charset="UTF-8"> tag/charset is not set on line 5, now line 6. To fix this I set the charset with <meta charset="UTF-8"> on line 7.
-Error 5: missing <meta name="viewport" content="width=device-width, initial-scale=1.0"> tag/viewport is not set on line 5, now line 6. To fix this I set the viewport using <meta name="viewport" content="width=device-width, initial-scale=1.0"> on line 8.
-Error 6: missing closing tag </head> on line 7, now line 10. To fix this I added </head> on line 10.
-Error 7: missing closing tag </h1> on line 9, now line 12. To fix this I added </h1> on line 12.
-Error 8: missing opening tag <p> on line 11, now line 14. To fix this I added <p> on line 14.
-Error 9: uses </li> as an opening tag instead of <li> on line 19, now line 22. To fix this, I replaced </li> with <li> on line 22.
-Error 10: uses </ul> instead of </ol> as a closing tag on line 24, now line 27. To fix this, I replaced </ul> with </ol> on line 27.
-Error 11: missing </p> closing tag on line 26, now line 29. To fix this, I added </p> on line 29.
-Error 12: missing alt to describe the image for users who don't have images loaded on line 28, now 31. To fix this, I added alt text describing the image on line 31.
-Error 13: uses </img> instead of </a> on line 30, now 33. To fix this, I replaced </img> with </a> on line 33.
-Error 14: uses <td> as a closing tag instead of </td> on line 39, now 42. To fix this, I replaced <td> with </td> on line 42.
-Error 15: missing </table> closing tag on line 45, now 48. To fix this, I added </table> on line 48.
-Error 16: uses source instead of src on line 46, now line 49. To fix this, I replaced source with src on line 49.
-Error 17: uses error.jpeg instead of error.jpg on line 46, now line 49. To fix this, I deleted an "e" in "jpeg" on line 49.
-Error 18: no paragraph tags/missing <p> and </p> tags on line 48, now line 51. To fix this I added <p> and </p> on line 51.
-Error 19: no <s> tag for strikethrough text/missing <s> and </s> tags for strikethrough text on line 48, now line 51. To fix this, I added <s> and </s> on line 51.
-Error 20: use style="background-color:lightgray;" in place of bgcolor="lightgray" to get a light gray background color on line 50, now line 53. To fix this, I replaced bgcolor="lightgray" with style="background-color:lightgray;" on line 53.
-Error 21: missing --> closing tag for comment on line 54, now line 57. To fix this, I added closing tag --> for comments on line 57.
-Error 22: missing </a> closing tag on line 56, now line 59. To fix this, I added </a> tag on line 59.
-Error 23: </p> and </em> should be switched on line 58. To fix this, I switch </p> and </em> on line 61.
-Error 24: uses <em> and </em> instead of <u> and </u> for underlined text on line 58, now line 61. To fix this, I replaced <em> and </em> with <u> and </u> on line 61.
-Error 25: uses <li> and </li> instead of <dt> and </dt> for descriptive item title on line 61, now line 64. To fix this, I replaced <li> and </li> with <dt> and </dt> on line 64.
-Error 26: uses <li> and </li> instead of <dd> and </dd> for descriptive item text on line 62, now line 65. To fix this, I replaced <li> and </li> with <dd> and </dd> on line 65.
-Error 27: uses <h3> instead of </h2> as a closing tag on line 64, now line 67. To fix this I replaced <h3> with </h2> on line 67.
+Error 2: <html lang = "en"> should be declared right below doctype tag and above head tag on line 4. There are also two <html> tags. To fix this, we removed one html tag and moved <html language="en"> to above the head tag to line 3 and replaced "language" with "lang".
+Error 3: On line 4, now line 3, "language" was used instead of "lang". To fix this, we replaced "language" with "lang".
+Error 4: missing <meta charset="UTF-8"> tag/charset is not set on line 5, now line 6. To fix this we set the charset with <meta charset="UTF-8"> on line 7.
+Error 5: missing <meta name="viewport" content="width=device-width, initial-scale=1.0"> tag/viewport is not set on line 5, now line 6. To fix this we set the viewport using <meta name="viewport" content="width=device-width, initial-scale=1.0"> on line 8.
+Error 6: missing closing tag </head> on line 7, now line 10. To fix this we added </head> on line 10.
+Error 7: missing closing tag </h1> on line 9, now line 12. To fix this we added </h1> on line 12.
+Error 8: missing opening tag <p> on line 11, now line 14. To fix this we added <p> on line 14.
+Error 9: uses </li> as an opening tag instead of <li> on line 19, now line 22. To fix this we replaced </li> with <li> on line 22.
+Error 10: uses </ul> instead of </ol> as a closing tag on line 24, now line 27. To fix this we replaced </ul> with </ol> on line 27.
+Error 11: missing </p> closing tag on line 26, now line 29. To fix this, we added </p> on line 29.
+Error 12: missing alt to describe the image for users who don't have images loaded on line 28, now 31. To fix this, we added alt text describing the image on line 31.
+Error 13: uses </img> instead of </a> on line 30, now 33. To fix this, we replaced </img> with </a> on line 33.
+Error 14: uses <td> as a closing tag instead of </td> on line 39, now 42. To fix this, we replaced <td> with </td> on line 42.
+Error 15: missing </table> closing tag on line 45, now 48. To fix this, we added </table> on line 48.
+Error 16: uses source instead of src on line 46, now line 49. To fix this, we replaced source with src on line 49.
+Error 17: uses error.jpeg instead of error.jpg on line 46, now line 49. To fix this, we deleted an "e" in "jpeg" on line 49.
+Error 18: no paragraph tags/missing <p> and </p> tags on line 48, now line 51. To fix this we added <p> and </p> on line 51.
+Error 19: no <s> tag for strikethrough text/missing <s> and </s> tags for strikethrough text on line 48, now line 51. To fix this, we added <s> and </s> on line 51.
+Error 20: use style="background-color:lightgray;" in place of bgcolor="lightgray" to get a light gray background color on line 50, now line 53. To fix this, we replaced bgcolor="lightgray" with style="background-color:lightgray;" on line 53.
+Error 21: missing --> closing tag for comment on line 54, now line 57. To fix this, we added closing tag --> for comments on line 57.
+Error 22: missing </a> closing tag on line 56, now line 59. To fix this, we added </a> tag on line 59.
+Error 23: on line 56, now 59 there is no link inside the quotations marks. To fix this we added "https://example.com/" so that the link would go somewhere when clicked.
+Error 24: </p> and </em> should be switched on line 58. To fix this, we switch </p> and </em> on line 61.
+Error 25: uses <em> and </em> instead of <u> and </u> for underlined text on line 58, now line 61. To fix this, we replaced <em> and </em> with <u> and </u> on line 61.
+Error 26: uses <li> and </li> instead of <dt> and </dt> for descriptive item title on line 61, now line 64. To fix this, we replaced <li> and </li> with <dt> and </dt> on line 64.
+Error 27: uses <li> and </li> instead of <dd> and </dd> for descriptive item text on line 62, now line 65. To fix this, we replaced <li> and </li> with <dd> and </dd> on line 65.
+Error 28: uses <h3> instead of </h2> as a closing tag on line 64, now line 67. To fix this we replaced <h3> with </h2> on line 67.
 
 find_errors_2.html:
+
+Error 1: missing html opening tag on line 2, now line 3. To fix this, we added <html lang="en"> on line 2.
+Error 2: On line 5 a header is used inside the head. Headers should be used in the body instead of the head so that they can be seen on the website. To fix this, we move this line inside the body.
+Error 3: Missing </head> closing tag on line 5. To fix this, add </head> on line 5.
+Error 4: missing > in body on line 6. To fix this, we used <body> instead of <body.
+Error 5: random html tag inside the body on line 7. To fix this, we deleted the tag.
+Error 6: missing </p> closing tag on line 9. To fix this, we added </p> to line 9.
+Error 7: missing </strong> tag on line 9. To fix this, we added a </strong> tag on line 9.
+Error 8: uses "image 2.jpg" instead of "image_2.jpg" on line 11. To fix this, replace "image 2.jpg" with "image_2.jpg". 
+Error 9: uses href instead of src to link the image on line 11. To fix this, replace href with src
+Error 10: missing alt text to describe the image on line 11. To fix this, add a description of image.
+Error 11: missing <h2> opening tag on line 13. To fix this, add <h2> tag.
+Error 12: missing <p> opening tag on line 15. To fix this, add <p> tag. 
+Error 13: uses wrong symbols for comments on line 16. To fix this, use <!-- and -->
+Error 14: missing </body> closing tag on line 17. To fix this add </body> on line 17.
+Error 15: html is misspelled on line 18. To fix this use </html> instead of <html>.
+Error 16: issing </div> closing tag on line 10. To fix this, add </div>
