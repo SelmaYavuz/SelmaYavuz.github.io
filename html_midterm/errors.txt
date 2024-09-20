@@ -15,38 +15,39 @@ Error 9: uses </li> as an opening tag instead of <li> on line 19, now line 22. T
 Error 10: uses </ul> instead of </ol> as a closing tag on line 24, now line 27. To fix this we replaced </ul> with </ol> on line 27.
 Error 11: missing </p> closing tag on line 26, now line 29. To fix this, we added </p> on line 29.
 Error 12: missing alt to describe the image for users who don't have images loaded on line 28, now 31. To fix this, we added alt text describing the image on line 31.
-Error 13: uses </img> instead of </a> on line 30, now 33. To fix this, we replaced </img> with </a> on line 33.
-Error 14: uses <td> as a closing tag instead of </td> on line 39, now 42. To fix this, we replaced <td> with </td> on line 42.
-Error 15: missing </table> closing tag on line 45, now 48. To fix this, we added </table> on line 48.
-Error 16: uses source instead of src on line 46, now line 49. To fix this, we replaced source with src on line 49.
-Error 17: uses error.jpeg instead of error.jpg on line 46, now line 49. To fix this, we deleted an "e" in "jpeg" on line 49.
-Error 18: no paragraph tags/missing <p> and </p> tags on line 48, now line 51. To fix this we added <p> and </p> on line 51.
-Error 19: no <s> tag for strikethrough text/missing <s> and </s> tags for strikethrough text on line 48, now line 51. To fix this, we added <s> and </s> on line 51.
-Error 20: use style="background-color:lightgray;" in place of bgcolor="lightgray" to get a light gray background color on line 50, now line 53. To fix this, we replaced bgcolor="lightgray" with style="background-color:lightgray;" on line 53.
-Error 21: missing --> closing tag for comment on line 54, now line 57. To fix this, we added closing tag --> for comments on line 57.
-Error 22: missing </a> closing tag on line 56, now line 59. To fix this, we added </a> tag on line 59.
-Error 23: on line 56, now 59 there is no link inside the quotations marks. To fix this we added "https://example.com/" so that the link would go somewhere when clicked.
-Error 24: </p> and </em> should be switched on line 58. To fix this, we switch </p> and </em> on line 61.
-Error 25: uses <em> and </em> instead of <u> and </u> for underlined text on line 58, now line 61. To fix this, we replaced <em> and </em> with <u> and </u> on line 61.
-Error 26: uses <li> and </li> instead of <dt> and </dt> for descriptive item title on line 61, now line 64. To fix this, we replaced <li> and </li> with <dt> and </dt> on line 64.
-Error 27: uses <li> and </li> instead of <dd> and </dd> for descriptive item text on line 62, now line 65. To fix this, we replaced <li> and </li> with <dd> and </dd> on line 65.
-Error 28: uses <h3> instead of </h2> as a closing tag on line 64, now line 67. To fix this we replaced <h3> with </h2> on line 67.
+Error 13: uses Image.png instead of image.jpg on line 28, now 31. To fix this we replaced "Image.png" with "image.jpg"
+Error 14: uses </img> instead of </a> on line 30, now 33. To fix this, we replaced </img> with </a> on line 33.
+Error 15: uses <td> as a closing tag instead of </td> on line 39, now 42. To fix this, we replaced <td> with </td> on line 42.
+Error 16: missing </table> closing tag on line 45, now 48. To fix this, we added </table> on line 48.
+Error 17: uses source instead of src on line 46, now line 49. To fix this, we replaced source with src on line 49.
+Error 18: uses error.jpeg instead of error.jpg on line 46, now line 49. To fix this, we deleted an "e" in "jpeg" on line 49.
+Error 19: no paragraph tags/missing <p> and </p> tags on line 48, now line 51. To fix this we added <p> and </p> on line 51.
+Error 20: no <s> tag for strikethrough text/missing <s> and </s> tags for strikethrough text on line 48, now line 51. To fix this, we added <s> and </s> on line 51.
+Error 21: use style="background-color:lightgray;" in place of bgcolor="lightgray" to get a light gray background color on line 50, now line 53. To fix this, we replaced bgcolor="lightgray" with style="background-color:lightgray;" on line 53.
+Error 22: missing --> closing tag for comment on line 54, now line 57. To fix this, we added closing tag --> for comments on line 57.
+Error 23: missing </a> closing tag on line 56, now line 59. To fix this, we added </a> tag on line 59.
+Error 24: on line 56, now 59 there is no link inside the quotations marks. To fix this we added "https://example.com/" so that the link would go somewhere when clicked.
+Error 25: </p> and </em> should be switched on line 58. To fix this, we switch </p> and </em> on line 61.
+Error 26: uses <em> and </em> instead of <u> and </u> for underlined text on line 58, now line 61. To fix this, we replaced <em> and </em> with <u> and </u> on line 61.
+Error 27: uses <li> and </li> instead of <dt> and </dt> for descriptive item title on line 61, now line 64. To fix this, we replaced <li> and </li> with <dt> and </dt> on line 64.
+Error 28: uses <li> and </li> instead of <dd> and </dd> for descriptive item text on line 62, now line 65. To fix this, we replaced <li> and </li> with <dd> and </dd> on line 65.
+Error 29: uses <h3> instead of </h2> as a closing tag on line 64, now line 67. To fix this we replaced <h3> with </h2> on line 67.
 
 find_errors_2.html:
 
-Error 29: missing html opening tag on line 2, now line 3. To fix this, we added <html lang="en"> on line 2.
-Error 30: On line 5 a header is used inside the head. Headers should be used in the body instead of the head so that they can be seen on the website. To fix this, we move this line inside the body.
-Error 31: Missing </head> closing tag on line 5. To fix this, add </head> on line 5.
-Error 32: missing > in body on line 6. To fix this, we used <body> instead of <body.
-Error 33: random html tag inside the body on line 7. To fix this, we deleted the tag.
-Error 34: missing </p> closing tag on line 9. To fix this, we added </p> to line 9.
-Error 35: missing </strong> tag on line 9. To fix this, we added a </strong> tag on line 9.
-Error 36: uses "image 2.jpg" instead of "image_2.jpg" on line 11. To fix this, replace "image 2.jpg" with "image_2.jpg". 
-Error 37: uses href instead of src to link the image on line 11. To fix this, replace href with src
-Error 38: missing alt text to describe the image on line 11. To fix this, add a description of image.
-Error 39: missing <h2> opening tag on line 13. To fix this, add <h2> tag.
-Error 40: missing <p> opening tag on line 15. To fix this, add <p> tag. 
-Error 41: uses wrong symbols for comments on line 16. To fix this, use <!-- and -->
-Error 42: missing </body> closing tag on line 17. To fix this add </body> on line 17.
-Error 43: html is misspelled on line 18. To fix this use </html> instead of <html>.
-Error 44: issing </div> closing tag on line 10. To fix this, add </div>
+Error 30: missing html opening tag on line 2, now line 3. To fix this, we added <html lang="en"> on line 2.
+Error 31: On line 5 a header is used inside the head. Headers should be used in the body instead of the head so that they can be seen on the website. To fix this, we move this line inside the body.
+Error 32: Missing </head> closing tag on line 5. To fix this, add </head> on line 5.
+Error 33: missing > in body on line 6. To fix this, we used <body> instead of <body.
+Error 34: random html tag inside the body on line 7. To fix this, we deleted the tag.
+Error 35: missing </p> closing tag on line 9. To fix this, we added </p> to line 9.
+Error 36: missing </strong> tag on line 9. To fix this, we added a </strong> tag on line 9.
+Error 37: uses "image 2.jpg" instead of "image_2.jpg" on line 11. To fix this, replace "image 2.jpg" with "image_2.jpg". 
+Error 38: uses href instead of src to link the image on line 11. To fix this, replace href with src
+Error 39: missing alt text to describe the image on line 11. To fix this, add a description of image.
+Error 40: missing <h2> opening tag on line 13. To fix this, add <h2> tag.
+Error 41: missing <p> opening tag on line 15. To fix this, add <p> tag. 
+Error 42: uses wrong symbols for comments on line 16. To fix this, use <!-- and -->
+Error 43: missing </body> closing tag on line 17. To fix this add </body> on line 17.
+Error 44: html is misspelled on line 18. To fix this use </html> instead of <html>.
+Error 45: issing </div> closing tag on line 10. To fix this, add </div>
