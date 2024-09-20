@@ -34,19 +34,19 @@ Error 28: uses <h3> instead of </h2> as a closing tag on line 64, now line 67. T
 
 find_errors_2.html:
 
-Error 1: missing html opening tag on line 2, now line 3. To fix this, we added <html lang="en"> on line 2.
-Error 2: On line 5 a header is used inside the head. Headers should be used in the body instead of the head so that they can be seen on the website. To fix this, we move this line inside the body.
-Error 3: Missing </head> closing tag on line 5. To fix this, add </head> on line 5.
-Error 4: missing > in body on line 6. To fix this, we used <body> instead of <body.
-Error 5: random html tag inside the body on line 7. To fix this, we deleted the tag.
-Error 6: missing </p> closing tag on line 9. To fix this, we added </p> to line 9.
-Error 7: missing </strong> tag on line 9. To fix this, we added a </strong> tag on line 9.
-Error 8: uses "image 2.jpg" instead of "image_2.jpg" on line 11. To fix this, replace "image 2.jpg" with "image_2.jpg". 
-Error 9: uses href instead of src to link the image on line 11. To fix this, replace href with src
-Error 10: missing alt text to describe the image on line 11. To fix this, add a description of image.
-Error 11: missing <h2> opening tag on line 13. To fix this, add <h2> tag.
-Error 12: missing <p> opening tag on line 15. To fix this, add <p> tag. 
-Error 13: uses wrong symbols for comments on line 16. To fix this, use <!-- and -->
-Error 14: missing </body> closing tag on line 17. To fix this add </body> on line 17.
-Error 15: html is misspelled on line 18. To fix this use </html> instead of <html>.
-Error 16: issing </div> closing tag on line 10. To fix this, add </div>
+Error 29: missing html opening tag on line 2, now line 3. To fix this, we added <html lang="en"> on line 2.
+Error 30: On line 5 a header is used inside the head. Headers should be used in the body instead of the head so that they can be seen on the website. To fix this, we move this line inside the body.
+Error 31: Missing </head> closing tag on line 5. To fix this, add </head> on line 5.
+Error 32: missing > in body on line 6. To fix this, we used <body> instead of <body.
+Error 33: random html tag inside the body on line 7. To fix this, we deleted the tag.
+Error 34: missing </p> closing tag on line 9. To fix this, we added </p> to line 9.
+Error 35: missing </strong> tag on line 9. To fix this, we added a </strong> tag on line 9.
+Error 36: uses "image 2.jpg" instead of "image_2.jpg" on line 11. To fix this, replace "image 2.jpg" with "image_2.jpg". 
+Error 37: uses href instead of src to link the image on line 11. To fix this, replace href with src
+Error 38: missing alt text to describe the image on line 11. To fix this, add a description of image.
+Error 39: missing <h2> opening tag on line 13. To fix this, add <h2> tag.
+Error 40: missing <p> opening tag on line 15. To fix this, add <p> tag. 
+Error 41: uses wrong symbols for comments on line 16. To fix this, use <!-- and -->
+Error 42: missing </body> closing tag on line 17. To fix this add </body> on line 17.
+Error 43: html is misspelled on line 18. To fix this use </html> instead of <html>.
+Error 44: issing </div> closing tag on line 10. To fix this, add </div>
