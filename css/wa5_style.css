@@ -100,7 +100,7 @@ html {
   /* card 2 */
 
   .card2 {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'Courier New', Courier, monospace;
     width: 35em;
     height: 22em;
     margin: 5em auto;
