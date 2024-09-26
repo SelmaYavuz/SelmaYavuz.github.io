@@ -29,6 +29,7 @@ html {
     border-radius: 1.5em;
   }
   
+  /* header */
   .card header {
     background-image: linear-gradient(to bottom,rgba(0,0,0,0.1), rgba(0,0,0,0));
     border-radius: 1.5em 1.5em 0 0;
@@ -39,6 +40,7 @@ html {
     padding-bottom: 1em; */
   }
   
+  /* footer */
   .card footer {
     background-image: linear-gradient(to bottom,rgba(0,0,0,0), rgba(0,0,0,0.1));
     border-radius: 0 0 1.5em 1.5em; 
@@ -49,6 +51,7 @@ html {
     padding-bottom: 1em; */
   }
   
+  /* img */
   .card article img {
     max-height: 100%;
     /* height: 12em; */
@@ -61,7 +64,6 @@ html {
     height: 3em;
     padding: 1em;
   }
-  /* header */
 
   /* main business card content */
   article {
@@ -72,16 +74,74 @@ html {
     line-height: 1.5em;
   }
 
+  /* article paragraph */
+
+  article p {
+    padding-top: .7em;
+  }
+
+  /* header 2 and paragraph */
   h2, p {
     margin: 0em;
   }
 
+  /* header 2 */
   h2 {
     font-size: 2em;
     line-height: 1.5em;
   }
   
+  /* footer paragraph */
   footer p {
     font-size: 1.5em;
     line-height: 1.7em;
+  }
+
+  /* card 2 */
+
+  .card2 {
+    width: 35em;
+    height: 22em;
+    margin: 5em auto;
+    background-color: plum; /* color mispelled */
+    border: 0.2em solid black;
+    border-radius: 1.5em;
+  }
+
+  .card2 header {
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0.1), rgba(0,0,0,0));
+    border-radius: 1.5em 1.5em 0 0;
+    /* height: 5em;
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em; */
+  }
+  
+  /* footer */
+  .card2 footer {
+    background-image: linear-gradient(to bottom,rgba(0,0,0,0), rgba(0,0,0,0.1));
+    border-radius: 0 0 1.5em 1.5em; 
+    /* height: 5em;
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em; */
+  }
+  
+  /* img */
+  .card2 article img {
+    max-height: 100%;
+    /* height: 12em; */
+    /* background-color: rgba(0,0,0,0.5); */
+    float: right;
+  }
+
+  .card2 footer, .card2 header {
+    height: 3em;
+    padding: 1em;
+  }
+
+  .card2 article p {
+    padding-top: 1.5em;
   }
