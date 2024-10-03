@@ -10,7 +10,7 @@ body {
 #overlay_1 {
     border-style: solid;
     border-color: black;
-    height: 200px;
+    /* height: 200px; */
     max-width: 19%;
     position: relative;
     left: 10%;
