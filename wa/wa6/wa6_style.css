@@ -1,0 +1,7 @@
+body {
+    background-image: url('COCO.jpg');
+    background-repeat: no-repeat;
+    height: auto;
+    background-position: center;
+    background-size: cover;
+}
