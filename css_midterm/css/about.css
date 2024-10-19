@@ -1,0 +1,87 @@
+/* Colors! */
+
+:root{
+    /* We don't have to use all these,
+    just the ones we like. */
+        --darkSlateGrey:#335C67;
+        --vanilla:#FFF3B0;
+        --hunyadiYellow:#E09F3E;
+        --auburn:#9E2A2B;
+        --chocolateCosmos: #540b0E;
+        --brown: #813405;
+        --bole: #774936;
+        --blackBean: #3C0000;
+    
+        --prettyBlue:#264D59;
+        --prettyLightBlue: #43978D;
+        --yellow: #F9E07F;
+        --lightOrange: #F9AD6A;
+        --orange: #D46C4e?
+    
+    /* To use color, place color with:
+    var(--prettyBlue); */
+    }
+
+body {
+    color:black;
+}
+
+h3 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.container-fluid img {
+    float: left;
+    max-width: 300px;
+    padding-right: 10px;
+    /* making image go to left and have text wrap around */
+}
+
+#aboutme {
+    text-align: left;
+    /* making text wrap around */
+    
+}
+
+/* for the parallax img!!! ari made this. */
+.parallax {
+    /* The image used */
+    background-image: url(../images/Catherine-Jason-Sinn-1920x400-1.jpg);
+
+    
+  
+    /* Set a specific height */
+    min-height: 300px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+  }
+
+  .parallax-text {
+    position: absolute; /* Fix the text inside the parallax */
+    top: 45%; /* Adjust positioning */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text */
+    color: white; /* Text color */
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+}
+
+/* making grid for offer and images!! */
+
+ul {
+    list-style-type: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}

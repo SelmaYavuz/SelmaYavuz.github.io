@@ -1,0 +1,70 @@
+h1 {
+    
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 80px;
+    color: white;
+}
+
+
+
+h2 {
+
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    color: white;
+}
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+p {
+    font-family: Helvetica, sans-serif;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    width: 800px;
+    color: white;
+}
+
+a {
+
+    text-align: center;
+    color: rgb(70, 157, 227);
+}
+
+/*373A40*/
+body {background-color: #000000;}
+
+
+.parallax {
+    /* The image used */
+    background-image: url(../images/Yumi-Jason-Sinn-1920x400-seated.jpg);
+
+    
+  
+    /* Set a specific height */
+    min-height: 300px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+  }
+
+  .parallax-text {
+    position: absolute; /* Fix the text inside the parallax */
+    top: 60%; /* Adjust positioning */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text */
+    color: white; /* Text color */
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+}
