@@ -23,20 +23,22 @@
     }
 
 body {
-    color:black;
+    color: black;
 }
 
 h3 {
     text-align: center;
+    color: var(--lightOrange);   
 }
 
 h2 {
     text-align: center;
+    color: var(--hunyadiYellow);
 }
 
 .container-fluid img {
     float: left;
-    max-width: 300px;
+    max-width: 400px;
     padding-right: 10px;
     /* making image go to left and have text wrap around */
 }
@@ -45,6 +47,10 @@ h2 {
     text-align: left;
     /* making text wrap around */
     
+}
+
+.parallax_grid {
+    display: grid;
 }
 
 /* for the parallax img!!! ari made this. */
@@ -75,13 +81,90 @@ h2 {
     font-family: Helvetica, sans-serif;
 }
 
-/* making grid for offer and images!! */
+/* adding an opaque background around the header so that it's more visible */
+.forbettervisibility {
+    background-color: rgb(0, 0, 0, .7);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* making grid for offer and images!! text will be on the left, images will be on the right */
 
 ul {
     list-style-type: none;
 }
 
+.offer h2, .offer p{
+    text-align: justify;
+}
+
+
 .grid {
     display: grid;
     grid-template-columns: auto auto;
+}
+
+.grid img {
+    max-width: 150px;
+}
+
+/* make container fluid a flexbox or grid so that it's responsive? */
+/* .container-fluid {
+    display: grid;
+}
+
+.first_grid {
+    display: grid;
+    grid-template-columns: auto auto;
+} */
+
+/* navigation bar css  */
+
+
+.navbar-color {
+    background-color: var(--yellow);
+    border-style: solid;
+    border-width: 3px;
+    
+    border-color: var(--chocolateCosmos);
+}
+
+.navbar-brand-color {
+    display:flex;
+    justify-content: left;
+    padding-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: var(--blackBean);
+}
+
+.navbar-toggler {
+    background-color: var(--blackBean);
+}
+
+.nav-link-reference {
+    display: flex;
+    color: var(--blackBean);
+    justify-content: center;
+    padding: 5px;
+}
+
+/* media quiry to make page responsive */
+
+@media (max-width: 1000px){
+    .container-fluid{
+        width: 400px;
+        text-align: left;
+    }
+   .aboutme {
+        display: grid;
+        grid-template-columns: auto;
+
+   }
+   .aboutme img {
+        max-width: 200px;
+   }
+   .grid {
+    display: block;
+   }
 }
