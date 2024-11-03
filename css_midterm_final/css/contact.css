@@ -1,0 +1,449 @@
+
+/* Colors. */
+:root{
+    /* We don't have to use all these,
+    just the ones we like. */
+    --vanilla:#FFF3B0;
+    --hunyadiYellow:#E09F3E;
+    --auburn:#9E2A2B;
+    
+    --prettyLightBlue: #43978D;
+    
+    /* To use color, place color with:
+    var(--prettyBlue); */
+    }
+
+
+/* media query for bigger screens */
+@media screen and (min-width: 1500px){
+    
+
+    /* styling for headers: Playfair display font, and varying colors */
+    h1 {
+    
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        font-size: 80px;
+        color: #FFF3B0;
+    }
+    
+    h2 {
+    
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        color: #9E2A2B;
+    }
+
+    h3 {
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        color: #43978D;
+    }
+
+    h4 {
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        color: #43978D;
+    }
+
+    h5 {
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        color: #FFF3B0;
+    }
+    
+    /* styling for address */
+
+    address {
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+        color: white;
+    }
+    
+
+    /* paragraph styling, helvetica font, auto margins, center aligned */
+    p {
+        font-family: Helvetica, sans-serif;
+        margin-left:auto;
+        margin-right:auto;
+        text-align:center;
+        /* width: 800px; */
+        color: white;
+    }
+    
+    a {
+    
+        text-align: center;
+        color: rgb(70, 157, 227);
+    }
+
+    /* navbar styling */
+    nav a{
+        color:white;
+    }
+    
+    /* to make the navigation bar black */
+    .navbar-color {
+        background-color: black;
+    }
+
+
+    /*making background black*/
+    body {background-color: #000000;}
+
+     /* adding a transparent dark background around the header on the parallax image so that it's more visible */
+    .forbettervisibility {
+        background-color: rgb(0, 0, 0, .7);
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    /* for the parallax image at the top */
+    .parallax {
+        /* The image used */
+        background-image: url(../images/Yumi-Jason-Sinn-1920x400-seated.jpg);
+    
+        
+      
+        /* Set a specific height */
+        min-height: 300px; 
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        background-color: black;
+
+      }
+    
+      .parallax-text {
+        position: absolute; /* Fix the text inside the parallax */
+        top: 60%; /* Adjust positioning */
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the text */
+        color: white; /* Text color */
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+    }
+    
+    /* parallax image that shows up when you scroll down, for the very bottom image*/
+    .TalkbackIMG{
+        /* Image used */
+        background-image: url(../images/about/Talkback-945x530-1.jpg);
+    
+        /* Set a specific height */
+        min-height: 300px; 
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        background-color: black;
+
+    }
+    
+    #Donors{
+        background-attachment: fixed;
+        text-align:center;
+        color:#FFF3B0;
+    }
+}
+
+
+/* media query for smaller screens */
+/* text will be aligned to the left instead of center */
+/* gave all text a padding of 10px so that it's not all the to the left. */
+@media screen and (max-width: 1500px) {
+
+    /* header styling */
+    h1 {
+    
+        text-align: left;
+        font-family: "Playfair Display", serif;
+        font-size: 80px;
+        color: #FFF3B0;
+        padding: 10px;
+    }
+    
+    h2 {
+    
+        text-align: left;
+        font-family: "Playfair Display", serif;
+        color: #9E2A2B;
+        padding: 10px;
+    }
+
+    h3 {
+        text-align: left;
+        font-family: "Playfair Display", serif;
+        color: #43978D;
+        padding: 10px;
+    }
+
+    h4 {
+        text-align: left;
+        font-family: "Playfair Display", serif;
+        color:#43978D;
+        padding: 10px;
+    }
+
+    h5 {
+        text-align: left;
+        font-family: "Playfair Display", serif;
+        color: #FFF3B0;
+    }
+    
+    /* styling for address */
+    /* align the text to the left, helvetica font, color white and 10px padding */
+    address {
+        text-align: left; 
+        font-family: Helvetica, sans-serif;
+        color: white;
+        padding: 10px;
+    }
+    
+    p {
+        font-family: Helvetica, sans-serif;
+        margin-left:auto;
+        margin-right:auto;
+        text-align:left;
+        /* width: 800px; */
+        color: white;
+        padding: 10px;
+
+    }
+    
+    a {
+    
+        text-align: left;
+        color: rgb(70, 157, 227);
+    }
+
+    /* navbar styling */
+    nav a{
+        color:white;
+        
+    }
+    
+    /* to make the navigation bar black */
+    .navbar-color {
+        background-color: black;
+    }
+
+    /*373A40*/
+    body {background-color: #000000;}
+
+     /* adding a transparent dark background around the header on the parallax image so that it's more visible */
+     .forbettervisibility {
+        background-color: rgb(0, 0, 0, .7);
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    
+    .parallax {
+        /* The image used */
+        background-image: url(../images/Yumi-Jason-Sinn-1920x400-seated.jpg);
+    
+        
+      
+        /* Set a specific height */
+        min-height: 300px; 
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        background-color: black;
+
+      }
+    
+      .parallax-text {
+        position: absolute; /* Fix the text inside the parallax */
+        top: 60%; /* Adjust positioning */
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the text */
+        color: white; /* Text color */
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+    }
+    
+    /* parallax image that shows up when you scroll down */
+    .TalkbackIMG{
+        /* Image used */
+        background-image: url(../images/about/Talkback-945x530-1.jpg);
+    
+        /* Set a specific height */
+        /* height has been modified on smaller screens so that image shows up when you scroll down */
+        min-height: 300px; 
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        background-color: black;
+
+    }
+    
+    #Donors{
+        background-attachment: fixed;
+        text-align: left;
+        color:#FFF3B0;
+        padding: 10px;
+    }
+}
+
+/* colors for headers will switch on screens smaller than 400px */
+@media screen and (max-width: 400px) {
+
+    /* header styling */
+    h1 {
+    
+        text-align: left;
+        font-family: "Playfair Display", serif;
+        font-size: 80px;
+        color: #FFF3B0;
+        padding: 10px;
+    }
+    
+    h2 {
+    
+        text-align: left;
+        font-family: "Playfair Display", serif;
+        color: #43978D;
+        padding: 10px;
+    }
+
+    h3 {
+        text-align: left;
+        font-family: "Playfair Display", serif;
+        color: #9E2A2B;
+        padding: 10px;
+    }
+
+    h4 {
+        text-align: left;
+        font-family: "Playfair Display", serif;
+        color: #9E2A2B;
+        padding: 10px;
+    }
+
+    h5 {
+        text-align: left;
+        font-family: "Playfair Display", serif;
+        color: #FFF3B0;
+    }
+    
+    /* styling for address */
+    /* align the text to the left, helvetica font, color white and 10px padding */
+    address {
+        text-align: left; 
+        font-family: Helvetica, sans-serif;
+        color: white;
+        padding: 10px;
+    }
+    
+    p {
+        font-family: Helvetica, sans-serif;
+        margin-left:auto;
+        margin-right:auto;
+        text-align:left;
+        /* width: 800px; */
+        color: white;
+        padding: 10px;
+
+    }
+    
+    a {
+    
+        text-align: left;
+        color: rgb(70, 157, 227);
+    }
+
+    /* navbar styling */
+    nav a{
+        color:white;
+        
+    }
+    
+    /* to make the navigation bar black */
+    .navbar-color {
+        background-color: black;
+    }
+
+    /*373A40*/
+    body {background-color: #000000;}
+
+     /* adding a transparent dark background around the header on the parallax image so that it's more visible */
+     .forbettervisibility {
+        background-color: rgb(0, 0, 0, .7);
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    
+    .parallax {
+        /* The image used */
+        background-image: url(../images/Yumi-Jason-Sinn-1920x400-seated.jpg);
+    
+        
+      
+        /* Set a specific height */
+        min-height: 300px; 
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        background-color: black;
+
+      }
+    
+      .parallax-text {
+        position: absolute; /* Fix the text inside the parallax */
+        top: 60%; /* Adjust positioning */
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center the text */
+        color: white; /* Text color */
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+    }
+    
+    /* parallax image that shows up when you scroll down */
+    .TalkbackIMG{
+        /* Image used */
+        background-image: url(../images/about/Talkback-945x530-1.jpg);
+    
+        /* Set a specific height */
+        /* height has been modified on smaller screens so that image shows up when you scroll down */
+        min-height: 300px; 
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        background-color: black;
+
+    }
+    
+    #Donors{
+        background-attachment: fixed;
+        text-align: left;
+        color:#FFF3B0;
+        padding: 10px;
+    }
+}
+
+
