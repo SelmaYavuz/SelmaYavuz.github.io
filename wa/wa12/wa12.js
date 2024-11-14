@@ -1,13 +1,13 @@
 
 let comic = {};
-const displayedComic = document.querySelector('comic');
+// const displayedComic = document.querySelector('comic');
 
 // plan
 // use random num gen to get random num for comic displayed, use fetch with that number, then using the response, change the img and alt in the html to the given response.
 
 function getComic(){
     // let num = Math.floor(Math.random() * 3000) + 1;
-    fetch(`https://xkcd.com/${Math.floor(Math.random() * 3000) + 1}/info.0.json`)
+    fetch(`https://corsproxy.io/?https://xkcd.com/${Math.floor(Math.random() * 3000) + 1}/info.0.json`)
         .then(res =>{
             if(res.ok){
                 console.log(res.alt);
@@ -18,8 +18,8 @@ function getComic(){
             }
         }) .then(res =>{
                 comic = res;
-                displayedComic.src = comic.src;
-                displayedComic.src = comic.alt;
+                document.getElementById("comic").src = comic.img;
+                document.getElementById("comic").alt = comic.alt;
                 document.getElementById("title").innerHTML = comic.safe_title;
                 document.getElementById("date").innerHTML = `${comic.month}/${comic.day}/${comic.year}`;
                 // comic = res;
