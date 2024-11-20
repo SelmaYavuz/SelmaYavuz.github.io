@@ -1,0 +1,27 @@
+/* styling for the area in which the game will be played */
+#content {
+    border: 1px solid black;
+    height: 60vh;
+    width: 40vw;
+    margin: auto;
+    margin-top: 20vh;
+    position: relative;
+}
+
+/* character styling */
+#chara {
+    background-color: pink;
+    height: 8vh;
+    width: 4vw;
+    position: absolute;
+    bottom: 0;
+}
+
+/* end goal styling */
+#end {
+    background-color: green;
+    height: 8vh;
+    width: 4vw;
+    position: absolute;
+    left: 36vw;
+}
