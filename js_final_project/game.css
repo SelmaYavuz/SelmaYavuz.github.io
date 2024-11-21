@@ -11,7 +11,7 @@
 /* character styling */
 #chara {
     background-color: pink;
-    height: 8vh;
+    height: 4vh;
     width: 4vw;
     position: absolute;
     bottom: 0;
@@ -20,7 +20,7 @@
 /* end goal styling */
 #end {
     background-color: green;
-    height: 8vh;
+    height: 4vh;
     width: 4vw;
     position: absolute;
     left: 36vw;

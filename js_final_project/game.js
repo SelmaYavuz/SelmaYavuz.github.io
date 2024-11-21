@@ -16,38 +16,41 @@ char_properties.leftRight = 0;
 // char_properties.right = 0;
 // char_properties.down = 0;
 char_properties.elem = document.getElementById("chara");
+// variable for how much u move per step
+const steps = 4;
 
 // function for moving
 // take a parameter to determine which direction
 function move(direction)
 {
+    // player can now move usinsg arrow keys
     console.log(direction);
     console.log(char_position);
     if(direction == "L") // move to the left 10 px
     {
         // check if this would exceed the bound
-        char_properties.leftRight += 10;
-        char_properties.elem.style.right = `${char_properties.leftRight}px`;
+        char_properties.leftRight -= steps;
+        char_properties.elem.style.left = `${char_properties.leftRight}vw`;
         console.log(char_properties.elem.style.right);
     }
     else if(direction == "R") // move to the right 10 px
     {
-        char_properties.leftRight -= 10;
-        char_properties.elem.style.right = `${char_properties.leftRight}px`;
+        char_properties.leftRight += steps;
+        char_properties.elem.style.left = `${char_properties.leftRight}vw`;
         console.log(char_properties.elem.style.right);
 
     }
     else if(direction == "D") // move down 10 px
     {
-        char_properties.upDown += 10;
-        char_properties.elem.style.top = `${char_properties.upDown}px`;
+        char_properties.upDown -= steps;
+        char_properties.elem.style.bottom = `${char_properties.upDown}vh`;
         console.log(char_properties.elem.style.top);
 
     }
     else
     {
-        char_properties.upDown -= 10;
-        char_properties.elem.style.top = `${char_properties.upDown}px`;
+        char_properties.upDown += steps;
+        char_properties.elem.style.bottom = `${char_properties.upDown}vh`;
         console.log(char_properties.elem.style.top);
 
     }
@@ -70,13 +73,15 @@ function endGoal()
 
     // update characters position
     char_position = document.getElementById("chara").getBoundingClientRect();
+    end_position = document.getElementById("end").getBoundingClientRect();
 
     // end_position doesn't need to update since it should be the same
 
     // next compare char_position to the end_goal to check if the player made it to the end!
-    if(char_position == end_position)
+    if(char_position.top == end_position.top && char_position.left == end_position.left)
     {
         alert("You escaped successfully!");
+        // need to reset the level and prompt the player to continue
     }
 
     // more to be done with this function!!!
@@ -89,7 +94,9 @@ function endGoal()
 
 // use set interval to check the players position and if they've reached the end
 // check if they've reach the end every 100ms
-setInterval(endGoal(), 100); 
+setInterval(() =>{
+    endGoal();
+}, 100); 
 
 // code for moving
 document.addEventListener("keydown", e=>{
