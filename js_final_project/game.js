@@ -31,27 +31,27 @@ function move(direction)
         // check if this would exceed the bound
         char_properties.leftRight -= steps;
         char_properties.elem.style.left = `${char_properties.leftRight}vw`;
-        console.log(char_properties.elem.style.right);
+        // console.log(char_properties.elem.style.right);
     }
     else if(direction == "R") // move to the right 10 px
     {
         char_properties.leftRight += steps;
         char_properties.elem.style.left = `${char_properties.leftRight}vw`;
-        console.log(char_properties.elem.style.right);
+        // console.log(char_properties.elem.style.right);
 
     }
     else if(direction == "D") // move down 10 px
     {
         char_properties.upDown -= steps;
         char_properties.elem.style.bottom = `${char_properties.upDown}vh`;
-        console.log(char_properties.elem.style.top);
+        // console.log(char_properties.elem.style.top);
 
     }
     else
     {
         char_properties.upDown += steps;
         char_properties.elem.style.bottom = `${char_properties.upDown}vh`;
-        console.log(char_properties.elem.style.top);
+        // console.log(char_properties.elem.style.top);
 
     }
     char_position = document.getElementById("chara").getBoundingClientRect();

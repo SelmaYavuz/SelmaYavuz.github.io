@@ -4,7 +4,7 @@
     height: 60vh;
     width: 40vw;
     margin: auto;
-    margin-top: 20vh;
+    /* margin-top: 20vh; */
     position: relative;
 }
 
@@ -24,4 +24,11 @@
     width: 4vw;
     position: absolute;
     left: 36vw;
+}
+
+/* title styling */
+/* want to be displayed on top of the game */
+#title {
+    margin: auto;
+    text-align: center;
 }
