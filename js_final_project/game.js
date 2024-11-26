@@ -17,7 +17,24 @@ char_properties.leftRight = 0;
 // char_properties.down = 0;
 char_properties.elem = document.getElementById("chara");
 // variable for how much u move per step
+// in vw and vh, for checking the boundaries u have to convert to pixels
 const steps = 4;
+
+// function to convert vw and vh to px
+function vhVwToPx(v)
+{
+    return window.innerHeight * (v / 100);
+}
+
+// reset function
+
+function reset()
+{
+    // return everything to normal
+    // includes time, char position
+    document.getElementById("chara").style.bottom = 0;
+    document.getElementById("chara").style.left = 0;
+}
 
 // function for moving
 // take a parameter to determine which direction
@@ -26,32 +43,61 @@ function move(direction)
     // player can now move usinsg arrow keys
     console.log(direction);
     console.log(char_position);
-    if(direction == "L") // move to the left 10 px
+    if(direction == "L") // move to the left 
     {
-        // check if this would exceed the bound
-        char_properties.leftRight -= steps;
-        char_properties.elem.style.left = `${char_properties.leftRight}vw`;
-        // console.log(char_properties.elem.style.right);
+        // check if this would exceed the bound, 
+        if((char_position.left - vhVwToPx(steps)) <= (content_border.left))
+        {
+            // do nothing, it would exceed the boundary
+        }
+        else
+        {
+            char_properties.leftRight -= steps;
+            char_properties.elem.style.left = `${char_properties.leftRight}vw`;
+            // console.log(char_properties.elem.style.right);
+        }
     }
-    else if(direction == "R") // move to the right 10 px
+    else if(direction == "R") // move to the right
     {
-        char_properties.leftRight += steps;
-        char_properties.elem.style.left = `${char_properties.leftRight}vw`;
-        // console.log(char_properties.elem.style.right);
+        if((char_position.right + vhVwToPx(steps)) >= content_border.right)
+        {
+            // do nothing, would exceed boundary
+        }
+        else
+        {
+            char_properties.leftRight += steps;
+            char_properties.elem.style.left = `${char_properties.leftRight}vw`;
+            // console.log(char_properties.elem.style.right);
+        }
+        
 
     }
-    else if(direction == "D") // move down 10 px
+    else if(direction == "D") // move down 
     {
-        char_properties.upDown -= steps;
-        char_properties.elem.style.bottom = `${char_properties.upDown}vh`;
-        // console.log(char_properties.elem.style.top);
+        if(char_position.bottom + vhVwToPx(steps) >= content_border.bottom)
+        {
+            //do nothing
+        }
+        else
+        {
+            char_properties.upDown -= steps;
+            char_properties.elem.style.bottom = `${char_properties.upDown}vh`;
+            // console.log(char_properties.elem.style.top);
+        }
 
     }
-    else
+    else // move down
     {
-        char_properties.upDown += steps;
-        char_properties.elem.style.bottom = `${char_properties.upDown}vh`;
-        // console.log(char_properties.elem.style.top);
+        if(char_position.top - vhVwToPx(steps) <= content_border.top)
+        {
+            //do nothing, would exceed boundaries
+        }
+        else
+        {
+            char_properties.upDown += steps;
+            char_properties.elem.style.bottom = `${char_properties.upDown}vh`;
+            // console.log(char_properties.elem.style.top);
+        }
 
     }
     char_position = document.getElementById("chara").getBoundingClientRect();
@@ -81,6 +127,7 @@ function endGoal()
     if(char_position.top == end_position.top && char_position.left == end_position.left)
     {
         alert("You escaped successfully!");
+        reset();
         // need to reset the level and prompt the player to continue
     }
 
