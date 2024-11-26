@@ -11,13 +11,35 @@
     <div id="title">
         <h1>Maze Game!</h1>
         <p>Use the arrow keys to move the pink box to the green box before time runs out!</p>
+        <h2>Time Left:</h2>
+        <p id="time">14</p>
     </div>
     <!-- where the game will be played -->
     <div id="content">
-        <!-- character player will control -->
-        <div id="chara"></div>
+
         <!-- where the player must get to -->
         <div id="end"></div>
+        <!-- what player will control -->
+        <div id="chara"></div>
+
+        <!-- where the you lost will be -->
+        <div id="lost">
+
+            <h2>You ran out of time!</h2>
+            <p>Would you like to try again?</p>
+            <button type="button" id="again">Yes</button>
+            <button type="button" id="exit">No</button>
+
+        </div> 
+
+        <div id="won">
+
+            <h2>You escaped!</h2>
+            <p>Continue to the next level?</p>
+            <button type="button" id="continue">Yes</button>
+            <button type="button" id="no">No</button>
+
+        </div> 
     </div>
 </body>
 <!-- linking js -->

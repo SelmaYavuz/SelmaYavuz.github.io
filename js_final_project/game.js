@@ -20,6 +20,9 @@ char_properties.elem = document.getElementById("chara");
 // in vw and vh, for checking the boundaries u have to convert to pixels
 const steps = 4;
 
+// variable for keeping track of time
+let time_left = 15;
+
 // function to convert vw and vh to px
 function vhVwToPx(v)
 {
@@ -34,6 +37,14 @@ function reset()
     // includes time, char position
     document.getElementById("chara").style.bottom = 0;
     document.getElementById("chara").style.left = 0;
+    // updating characters position
+    char_position = document.getElementById("chara").getBoundingClientRect();
+    char_properties.upDown = 0;
+    char_properties.leftRight = 0;
+    char_properties.elem = document.getElementById("chara");
+    time_left = 16;
+
+
 }
 
 // function for moving
@@ -126,15 +137,65 @@ function endGoal()
     // next compare char_position to the end_goal to check if the player made it to the end!
     if(char_position.top == end_position.top && char_position.left == end_position.left)
     {
-        alert("You escaped successfully!");
-        reset();
+        // make win screen visible
+        document.getElementById("won").style.visibility = "visible";
+
+        // event listener for yes and no buttons
+
+        document.getElementById("continue").addEventListener("click", e=>{
+            // in this function, the winning screen would be made hidden, and the next level would be call
+            // have a function that sets up the level
+            document.getElementById("won").style.visibility = "hidden";
+            reset();
+        })
+
+        document.getElementById("no").addEventListener("click", e=>{
+            // will close the game if player chooses no
+            // kick them out!
+            self.close();
+        })
+
+
         // need to reset the level and prompt the player to continue
+    }
+
+    if(time_left == 0)
+    {
+        // lost screen is visible
+        document.getElementById("lost").style.visibility = "visible";
+
+        document.getElementById("again").addEventListener("click", e=>{
+            // in this function, the winning screen would be made hidden, and the next level would be call
+            // have a function that sets up the level
+            document.getElementById("lost").style.visibility = "hidden";
+            reset();
+        })
+
+        document.getElementById("exit").addEventListener("click", e=>{
+            // will close the game if player chooses no
+            // kick them out!
+            self.close();
+        })
     }
 
     // more to be done with this function!!!
 }
 
+// function that will set up each level
+function setUp()
+{
+    
+}
 
+// use set interval to keep track of time
+// 1000 milliseconds in a second
+setInterval(() =>{
+    time_left--;
+    if(time_left >= 0)
+    {
+        document.getElementById("time").innerHTML = time_left;
+    }
+}, 1000);
 
 
 // function for enemy
@@ -165,6 +226,7 @@ document.addEventListener("keydown", e=>{
         move("U");
     }
 })
+
 
 
 // code outline/ what needs to be done
