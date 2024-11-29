@@ -8,6 +8,89 @@
     position: relative;
 }
 
+/* wall styling */
+#wall1 {
+    background-color: black;
+    width: 36vw;
+    height: 4vh;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    
+}
+
+#wall2 {
+    background-color: black;
+    width: 36vw;
+    height: 4vh;
+    position: absolute;
+    left: 0;
+    bottom: 8vh;
+    
+}
+
+#wall3 {
+    background-color: black;
+    width: 36vw;
+    height: 4vh;
+    position: absolute;
+    right: 0;
+    bottom: 16vh;
+    
+}
+
+#wall4 {
+    background-color: black;
+    width: 36vw;
+    height: 4vh;
+    position: absolute;
+    left: 0;
+    bottom: 24vh;
+    
+}
+
+#wall5 {
+    background-color: black;
+    width: 36vw;
+    height: 4vh;
+    position: absolute;
+    right: 0;
+    bottom: 32vh;
+    
+}
+
+#wall6 {
+    background-color: black;
+    width: 36vw;
+    height: 4vh;
+    position: absolute;
+    left: 0;
+    bottom: 40vh;
+    
+}
+
+#wall7 {
+    background-color: black;
+    width: 36vw;
+    height: 4vh;
+    position: absolute;
+    right: 0;
+    bottom: 48vh;
+    
+}
+
+#wall8 {
+    background-color: black;
+    width: 36vw;
+    height: 4vh;
+    position: absolute;
+    left: 0;
+    bottom: 56vh;
+    
+}
+
+
+
 /* character styling */
 #chara {
     background-color: pink;

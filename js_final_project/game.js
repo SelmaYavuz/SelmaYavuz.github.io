@@ -6,6 +6,11 @@ char_position = document.getElementById("chara").getBoundingClientRect();
 let end_position = {};
 end_position = document.getElementById("end").getBoundingClientRect();
 
+// variable that checks for walls border
+let wall_1_position = {};
+wall_1_position = document.getElementById("wall1").getBoundingClientRect();
+
+
 // border for the content
 let content_border = {};
 content_border = document.getElementById("content").getBoundingClientRect();
