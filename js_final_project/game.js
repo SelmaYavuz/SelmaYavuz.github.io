@@ -79,6 +79,10 @@ function move(direction)
         {
             // do nothing, would exceed boundary
         }
+        else if(((char_position.right + vhVwToPx(steps)) >= wall_1_position.left) && char_position.bottom == wall_1_position.bottom)
+        {
+            // do nothing, want to run into wall
+        }
         else
         {
             char_properties.leftRight += steps;
