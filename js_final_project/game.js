@@ -1,5 +1,7 @@
 // REMINDER: MAKE VARIABLES THAT CHECK WHAT LEVEL THE PLAYER IS AT!!!!!!! AND USE THOSE TO CHANGE THE LEVELS/KEEP TRACK OF LEVELS
 
+// refresh screen if player changes size of screen?
+
 // variable for keeping track of characters position
 let char_position = {};
 char_position = document.getElementById("chara").getBoundingClientRect();
@@ -13,7 +15,8 @@ let wall_1_position = {};
 wall_1_position = document.getElementById("wall1").getBoundingClientRect();
 let wall_2_position = {};
 wall_2_position =  document.getElementById("wall2").getBoundingClientRect();
-
+let wall_3_position = {};
+wall_3_position = document.getElementById("wall3").getBoundingClientRect();
 
 // border for the content
 let content_border = {};
@@ -30,7 +33,7 @@ char_properties.elem = document.getElementById("chara");
 const steps = 4;
 
 // variable for keeping track of time
-let time_left = 15;
+let time_left = 16;
 
 // function to convert vw and vh to px
 function vhVwToPx(v)
@@ -70,7 +73,7 @@ function move(direction)
         {
             // do nothing, it would exceed the boundary
         }
-        else if(/**wall two */ )
+        else if(/**wall two */ (char_position.left - vhVwToPx(steps) <= wall_2_position.right && char_position.bottom == wall_2_position.bottom))
         {
 
         }
@@ -87,7 +90,7 @@ function move(direction)
         {
             // do nothing, would exceed boundary
         }
-        else if((((char_position.right + vhVwToPx(steps)) >= wall_1_position.left) && char_position.bottom == wall_1_position.bottom)) // checking if player will run into a wall, don't want them to phase through. There's probably an easier way to do this but this all I can think of right now
+        else if((/**wall 1*/((char_position.right + vhVwToPx(steps)) >= wall_1_position.left) && char_position.bottom == wall_1_position.bottom)) // checking if player will run into a wall, don't want them to phase through. There's probably an easier way to do this but this all I can think of right now
         {
             // do nothing, want to run into wall
         }
@@ -105,13 +108,15 @@ function move(direction)
         if(char_position.bottom + vhVwToPx(steps) >= content_border.bottom)
         {
             //do nothing
+            console.log("border!")
         }
-        else if((char_position.right >= wall_1_position.left) && (char_position.bottom + vhVwToPx(steps) >= wall_1_position.top))
+        else if(/**wall 1 */((char_position.right >= wall_1_position.left) && (char_position.bottom + vhVwToPx(steps) >= wall_1_position.top)) /**wall 2 */ || ((char_position.bottom + vhVwToPx(steps) >= wall_2_position.top) && (Math.round(char_position.left) < Math.round(wall_2_position.right)) && (Math.round(char_position.bottom) == Math.round(wall_2_position.top))) /**wall 3 boundaries */)
         {
-
+            console.log("HEREEE!!!")
         }
         else
         {
+            console.log("hiiiii")
             char_properties.upDown -= steps;
             char_properties.elem.style.bottom = `${char_properties.upDown}vh`;
             // console.log(char_properties.elem.style.top);
@@ -156,6 +161,13 @@ function endGoal()
     // update characters position
     char_position = document.getElementById("chara").getBoundingClientRect();
     end_position = document.getElementById("end").getBoundingClientRect();
+
+    // updating the content border incase the player decides to resize the screen while playing, lol.
+    content_border = document.getElementById("content").getBoundingClientRect();
+
+    // updating all the walls in case the player decides to resize the screen.
+    wall_1_position = document.getElementById("wall1").getBoundingClientRect();
+    wall_2_position = document.getElementById("wall2").getBoundingClientRect();
 
     // end_position doesn't need to update since it should be the same
 
