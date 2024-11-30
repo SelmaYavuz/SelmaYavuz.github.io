@@ -9,6 +9,14 @@
 }
 
 /* wall styling */
+
+
+/* level 2 wall styling */
+
+#level2 {
+    visibility: hidden;
+}
+
 #wall1 {
     background-color: black;
     width: 36vw;

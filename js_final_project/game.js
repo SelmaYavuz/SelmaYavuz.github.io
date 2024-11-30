@@ -10,6 +10,10 @@ char_position = document.getElementById("chara").getBoundingClientRect();
 let end_position = {};
 end_position = document.getElementById("end").getBoundingClientRect();
 
+// variable that keeps track of levels
+let level2 = false;
+let level3 = false;
+
 // variable that checks for walls border
 let wall_1_position = {};
 wall_1_position = document.getElementById("wall1").getBoundingClientRect();
@@ -17,6 +21,17 @@ let wall_2_position = {};
 wall_2_position =  document.getElementById("wall2").getBoundingClientRect();
 let wall_3_position = {};
 wall_3_position = document.getElementById("wall3").getBoundingClientRect();
+let wall_4_position = {};
+wall_4_position = document.getElementById("wall4").getBoundingClientRect();
+let wall_5_position = {};
+wall_5_position = document.getElementById("wall5").getBoundingClientRect();
+let wall_6_position = {};
+wall_6_position = document.getElementById("wall6").getBoundingClientRect();
+let wall_7_position = {};
+wall_7_position = document.getElementById("wall7").getBoundingClientRect();
+let wall_8_position = {};
+wall_8_position = document.getElementById("wall8").getBoundingClientRect();
+
 
 // border for the content
 let content_border = {};
@@ -34,6 +49,8 @@ const steps = 4;
 
 // variable for keeping track of time
 let time_left = 16;
+let goal_interval;
+let time_interval;
 
 // function to convert vw and vh to px
 function vhVwToPx(v)
@@ -73,9 +90,9 @@ function move(direction)
         {
             // do nothing, it would exceed the boundary
         }
-        else if(/**wall two */ (char_position.left - vhVwToPx(steps) <= wall_2_position.right && char_position.bottom == wall_2_position.bottom))
+        else if(level2 && !(level3) && (/**wall two */ (char_position.left - vhVwToPx(steps) <= wall_2_position.right && char_position.bottom == wall_2_position.bottom) || /**wall 4 */(char_position.left - vhVwToPx(steps) <= wall_4_position.right && char_position.bottom == wall_4_position.bottom) || /**wall 6 */(char_position.left - vhVwToPx(steps) <= wall_6_position.right && char_position.bottom == wall_6_position.bottom) /**wall8 */ || (char_position.left - vhVwToPx(steps) <= wall_8_position.right && char_position.bottom == wall_8_position.bottom))) 
         {
-
+            // do nothing, since it would run the player must no phase through the wall
         }
         else
         {
@@ -90,7 +107,7 @@ function move(direction)
         {
             // do nothing, would exceed boundary
         }
-        else if((/**wall 1*/((char_position.right + vhVwToPx(steps)) >= wall_1_position.left) && char_position.bottom == wall_1_position.bottom)) // checking if player will run into a wall, don't want them to phase through. There's probably an easier way to do this but this all I can think of right now
+        else if(level2 && !(level3) && ((/**wall 1*/((char_position.right + vhVwToPx(steps)) >= wall_1_position.left) && char_position.bottom == wall_1_position.bottom) || /**wall 3*/((char_position.right + vhVwToPx(steps)) >= wall_3_position.left && Math.round(char_position.bottom) == Math.round(wall_3_position.bottom)) /**wall 5 */ || ((char_position.right + vhVwToPx(steps)) >= wall_5_position.left && Math.round(char_position.bottom) == Math.round(wall_5_position.bottom)) /**wall 7 */|| ((char_position.right + vhVwToPx(steps)) >= wall_7_position.left && Math.round(char_position.bottom) == Math.round(wall_7_position.bottom)))) // checking if player will run into a wall, don't want them to phase through. There's probably an easier way to do this but this all I can think of right now
         {
             // do nothing, want to run into wall
         }
@@ -110,7 +127,7 @@ function move(direction)
             //do nothing
             console.log("border!")
         }
-        else if(/**wall 1 */((char_position.right >= wall_1_position.left) && (char_position.bottom + vhVwToPx(steps) >= wall_1_position.top)) /**wall 2 */ || ((char_position.bottom + vhVwToPx(steps) >= wall_2_position.top) && (Math.round(char_position.left) < Math.round(wall_2_position.right)) && (Math.round(char_position.bottom) == Math.round(wall_2_position.top))) /**wall 3 boundaries */)
+        else if(level2 && !(level3) && /**wall 1 */(((char_position.right >= wall_1_position.left) && (char_position.bottom + vhVwToPx(steps) >= wall_1_position.top)) /**wall 2 */ || ((char_position.bottom + vhVwToPx(steps) >= wall_2_position.top) && (Math.round(char_position.left) < Math.round(wall_2_position.right)) && (Math.round(char_position.bottom) == Math.round(wall_2_position.top))) /**wall 3 boundaries */|| ((char_position.right >= wall_3_position.left) && (Math.round(char_position.bottom + vhVwToPx(steps)) >= Math.round(wall_3_position.top)) && Math.round(char_position.bottom) >= Math.round(wall_3_position.top) && Math.round(char_position.top) <= Math.round(wall_4_position.bottom)) /**wall 4 */ || ((char_position.bottom + vhVwToPx(steps) >= wall_4_position.top) && (Math.round(char_position.left) < Math.round(wall_4_position.right)) && (Math.round(char_position.bottom) >= Math.round(wall_4_position.top) && Math.round(char_position.top) <= Math.round(wall_5_position.bottom))) /**wall 5 */ || ((char_position.right >= wall_5_position.left) && (Math.round(char_position.bottom + vhVwToPx(steps)) >= Math.round(wall_5_position.top)) && Math.round(char_position.bottom) >= Math.round(wall_5_position.top) && Math.round(char_position.top) <= Math.round(wall_6_position.bottom)) /**wall 6 */ || ((char_position.bottom + vhVwToPx(steps) >= wall_6_position.top) && (Math.round(char_position.left) < Math.round(wall_6_position.right)) && (Math.round(char_position.bottom) >= Math.round(wall_6_position.top) && Math.round(char_position.top) <= Math.round(wall_7_position.bottom))) /**wall 7 */ || ((char_position.right >= wall_7_position.left) && (Math.round(char_position.bottom + vhVwToPx(steps)) >= Math.round(wall_7_position.top)) && Math.round(char_position.bottom) >= Math.round(wall_7_position.top) && Math.round(char_position.top) <= Math.round(wall_8_position.bottom))))
         {
             console.log("HEREEE!!!")
         }
@@ -129,7 +146,7 @@ function move(direction)
         {
             //do nothing, would exceed boundaries
         }
-        else if(/*wall two */(char_position.top + vhVwToPx(steps) >= wall_2_position.bottom && char_position.right < wall_2_position.right && char_position.bottom != wall_1_position.bottom) /*wall three */)
+        else if(level2 && !(level3) && (/*wall two */(char_position.top + vhVwToPx(steps) >= wall_2_position.bottom && char_position.right < wall_2_position.right && char_position.bottom != wall_1_position.bottom) /*wall three */ || ((Math.round(char_position.top + vhVwToPx(steps)) >= Math.round(wall_3_position.bottom) && Math.round(char_position.left) >= Math.round(wall_3_position.left) && (Math.round(char_position.bottom) >= Math.round(wall_2_position.top) && Math.round(char_position.top) <= Math.round(wall_3_position.bottom)))) /**wall 4 */|| (char_position.top + vhVwToPx(steps) >= wall_4_position.bottom && char_position.right < wall_4_position.right && (Math.round(char_position.bottom) >= Math.round(wall_5_position.top) && Math.round(char_position.top) <= Math.round(wall_4_position.bottom))) /**wall 5 */ || ((Math.round(char_position.top + vhVwToPx(steps)) >= Math.round(wall_5_position.bottom) && Math.round(char_position.left) >= Math.round(wall_5_position.left) && (Math.round(char_position.bottom) >= Math.round(wall_4_position.top) && Math.round(char_position.top) <= Math.round(wall_5_position.bottom)))) /**wall 6*/ || (char_position.top + vhVwToPx(steps) >= wall_6_position.bottom && char_position.right < wall_6_position.right && (Math.round(char_position.bottom) >= Math.round(wall_7_position.top) && Math.round(char_position.top) <= Math.round(wall_6_position.bottom))) /**wall 7 */ || ((Math.round(char_position.top + vhVwToPx(steps)) >= Math.round(wall_7_position.bottom) && Math.round(char_position.left) >= Math.round(wall_7_position.left) && (Math.round(char_position.bottom) >= Math.round(wall_6_position.top) && Math.round(char_position.top) <= Math.round(wall_7_position.bottom)))) /**wall 8 */ || (char_position.top + vhVwToPx(steps) >= wall_8_position.bottom && char_position.right < wall_8_position.right && (Math.round(char_position.top) <= Math.round(wall_8_position.bottom)))))
         {
 
         }
@@ -166,23 +183,49 @@ function endGoal()
     content_border = document.getElementById("content").getBoundingClientRect();
 
     // updating all the walls in case the player decides to resize the screen.
-    wall_1_position = document.getElementById("wall1").getBoundingClientRect();
-    wall_2_position = document.getElementById("wall2").getBoundingClientRect();
+    if(level2)
+    {
+        wall_1_position = document.getElementById("wall1").getBoundingClientRect();
+        wall_2_position = document.getElementById("wall2").getBoundingClientRect();
+        wall_3_position = document.getElementById("wall3").getBoundingClientRect();
+        wall_4_position = document.getElementById("wall4").getBoundingClientRect();
+        wall_5_position = document.getElementById("wall5").getBoundingClientRect();
+        wall_6_position = document.getElementById("wall6").getBoundingClientRect();
+        wall_7_position = document.getElementById("wall7").getBoundingClientRect();
+        wall_8_position = document.getElementById("wall8").getBoundingClientRect();
+    }
+    
 
     // end_position doesn't need to update since it should be the same
 
     // next compare char_position to the end_goal to check if the player made it to the end!
     if(char_position.top == end_position.top && char_position.left == end_position.left)
     {
+        // clear the set interval
+        clearInterval(goal_interval);
+        clearInterval(time_interval);
         // make win screen visible
         document.getElementById("won").style.visibility = "visible";
-
+        // REMINDER: MAKE A WINNING SCREEN FOR BEATING THE GAME!!!  
         // event listener for yes and no buttons
 
         document.getElementById("continue").addEventListener("click", e=>{
             // in this function, the winning screen would be made hidden, and the next level would be call
             // have a function that sets up the level
             document.getElementById("won").style.visibility = "hidden";
+            if(!(level2))
+            {
+                level2 = true;
+                document.getElementById("level2").style.visibility = "visible";
+            }
+            else if(!(level3))
+            {
+                level3 = true;
+                document.getElementById("level2").style.visibility = "hidden";
+                document.getElementById("level3").style.visibility = "visible";
+            }
+
+            setUp();
             reset();
         })
 
@@ -191,8 +234,6 @@ function endGoal()
             // kick them out!
             self.close();
         })
-
-
         // need to reset the level and prompt the player to continue
     }
 
@@ -221,27 +262,33 @@ function endGoal()
 // function that will set up each level
 function setUp()
 {
-    
+    // will set up the intervals
+    time_interval = setInterval(() =>{
+        time_left--;
+        if(time_left >= 0)
+        {
+            document.getElementById("time").innerHTML = time_left;
+        }
+    }, 1000);
+    goal_interval = setInterval(() =>{
+        endGoal();
+    }, 100);
 }
 
 // use set interval to keep track of time
 // 1000 milliseconds in a second
-setInterval(() =>{
-    time_left--;
-    if(time_left >= 0)
-    {
-        document.getElementById("time").innerHTML = time_left;
-    }
-}, 1000);
 
 
-// function for enemy
 
-// use set interval to check the players position and if they've reached the end
-// check if they've reach the end every 100ms
-setInterval(() =>{
-    endGoal();
-}, 100); 
+// // function for enemy
+
+// // use set interval to check the players position and if they've reached the end
+// // check if they've reach the end every 100ms
+// let goal_interval = setInterval(() =>{
+//     endGoal();
+// }, 100); 
+
+setUp();
 
 // code for moving
 document.addEventListener("keydown", e=>{
