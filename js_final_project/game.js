@@ -1,3 +1,5 @@
+// REMINDER: MAKE VARIABLES THAT CHECK WHAT LEVEL THE PLAYER IS AT!!!!!!! AND USE THOSE TO CHANGE THE LEVELS/KEEP TRACK OF LEVELS
+
 // variable for keeping track of characters position
 let char_position = {};
 char_position = document.getElementById("chara").getBoundingClientRect();
@@ -9,6 +11,8 @@ end_position = document.getElementById("end").getBoundingClientRect();
 // variable that checks for walls border
 let wall_1_position = {};
 wall_1_position = document.getElementById("wall1").getBoundingClientRect();
+let wall_2_position = {};
+wall_2_position =  document.getElementById("wall2").getBoundingClientRect();
 
 
 // border for the content
@@ -66,6 +70,10 @@ function move(direction)
         {
             // do nothing, it would exceed the boundary
         }
+        else if(/**wall two */ )
+        {
+
+        }
         else
         {
             char_properties.leftRight -= steps;
@@ -79,7 +87,7 @@ function move(direction)
         {
             // do nothing, would exceed boundary
         }
-        else if(((char_position.right + vhVwToPx(steps)) >= wall_1_position.left) && char_position.bottom == wall_1_position.bottom)
+        else if((((char_position.right + vhVwToPx(steps)) >= wall_1_position.left) && char_position.bottom == wall_1_position.bottom)) // checking if player will run into a wall, don't want them to phase through. There's probably an easier way to do this but this all I can think of right now
         {
             // do nothing, want to run into wall
         }
@@ -98,6 +106,10 @@ function move(direction)
         {
             //do nothing
         }
+        else if((char_position.right >= wall_1_position.left) && (char_position.bottom + vhVwToPx(steps) >= wall_1_position.top))
+        {
+
+        }
         else
         {
             char_properties.upDown -= steps;
@@ -106,11 +118,15 @@ function move(direction)
         }
 
     }
-    else // move down
+    else // move up!
     {
         if(char_position.top - vhVwToPx(steps) <= content_border.top)
         {
             //do nothing, would exceed boundaries
+        }
+        else if(/*wall two */(char_position.top + vhVwToPx(steps) >= wall_2_position.bottom && char_position.right < wall_2_position.right && char_position.bottom != wall_1_position.bottom) /*wall three */)
+        {
+
         }
         else
         {
