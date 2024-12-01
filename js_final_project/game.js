@@ -214,7 +214,7 @@ function endGoal()
     content_border = document.getElementById("content").getBoundingClientRect();
 
     // updating all the walls in case the player decides to resize the screen.
-    if(level2)
+    if(level3)
     {
         wall_1_position = document.getElementById("wall1").getBoundingClientRect();
         wall_2_position = document.getElementById("wall2").getBoundingClientRect();
@@ -224,6 +224,14 @@ function endGoal()
         wall_6_position = document.getElementById("wall6").getBoundingClientRect();
         wall_7_position = document.getElementById("wall7").getBoundingClientRect();
         wall_8_position = document.getElementById("wall8").getBoundingClientRect();
+    }
+    else if(level2)
+    {
+        wall_9_position = document.getElementById("wall1").getBoundingClientRect();
+        wall_10_position = document.getElementById("wall2").getBoundingClientRect();
+        wall_11_position = document.getElementById("wall3").getBoundingClientRect();
+        wall_12_position = document.getElementById("wall4").getBoundingClientRect();
+        wall_13_position = document.getElementById("wall5").getBoundingClientRect();
     }
     
 

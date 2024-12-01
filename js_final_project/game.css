@@ -1,6 +1,15 @@
+
+/* body styling */
+
+body {
+    background-color: #FB928E;
+    color: black;
+}
+
 /* styling for the area in which the game will be played */
 #content {
-    border: 1px solid black;
+    background-color: #F6F5E1;
+    border: 4px double #FB928E;
     height: 60vh;
     width: 40vw;
     margin: auto;
@@ -18,7 +27,7 @@
 }
 
 #wall1 {
-    background-color: black;
+    background-color: #FB928E;
     width: 36vw;
     height: 4vh;
     position: absolute;
@@ -29,7 +38,7 @@
 }
 
 #wall2 {
-    background-color: black;
+    background-color: #FB928E;
     width: 36vw;
     height: 4vh;
     position: absolute;
@@ -39,7 +48,7 @@
 }
 
 #wall3 {
-    background-color: black;
+    background-color: #FB928E;
     width: 36vw;
     height: 4vh;
     position: absolute;
@@ -49,7 +58,7 @@
 }
 
 #wall4 {
-    background-color: black;
+    background-color: #FB928E;
     width: 36vw;
     height: 4vh;
     position: absolute;
@@ -59,7 +68,7 @@
 }
 
 #wall5 {
-    background-color: black;
+    background-color: #FB928E;
     width: 36vw;
     height: 4vh;
     position: absolute;
@@ -69,7 +78,7 @@
 }
 
 #wall6 {
-    background-color: black;
+    background-color: #FB928E;
     width: 36vw;
     height: 4vh;
     position: absolute;
@@ -79,7 +88,7 @@
 }
 
 #wall7 {
-    background-color: black;
+    background-color: #FB928E;
     width: 36vw;
     height: 4vh;
     position: absolute;
@@ -89,7 +98,7 @@
 }
 
 #wall8 {
-    background-color: black;
+    background-color: #FB928E;
     width: 36vw;
     height: 4vh;
     position: absolute;
@@ -105,7 +114,7 @@
 }
 
 #wall9 {
-    background-color:black;
+    background-color:#FB928E;
     width: 4vw;
     height: 56vh;
     position: absolute;
@@ -114,7 +123,7 @@
 }
 
 #wall10 {
-    background-color:black;
+    background-color:#FB928E;
     width: 4vw;
     height: 56vh;
     position: absolute;
@@ -123,7 +132,7 @@
 }
 
 #wall11 {
-    background-color:black;
+    background-color:#FB928E;
     width: 4vw;
     height: 56vh;
     position: absolute;
@@ -132,7 +141,7 @@
 }
 
 #wall12 {
-    background-color:black;
+    background-color:#FB928E;
     width: 4vw;
     height: 56vh;
     position: absolute;
@@ -141,7 +150,7 @@
 }
 
 #wall13 {
-    background-color:black;
+    background-color:#FB928E;
     width: 4vw;
     height: 56vh;
     position: absolute;
@@ -153,7 +162,7 @@
 
 /* character styling */
 #chara {
-    background-color: pink;
+    background-color: black;
     height: 4vh;
     width: 4vw;
     position: absolute;
@@ -179,7 +188,7 @@
 /* losing screen */
 #lost{
     visibility: hidden;
-    background-color: white;
+    background-color: #FB928E;
     border: 1px solid black;
     height: 20vh;
     width: 20vw;
@@ -192,7 +201,7 @@
 
 #won{
     visibility: hidden;
-    background-color: white;
+    background-color: #FB928E;
     border: 1px solid black;
     height: 20vh;
     width: 20vw;
@@ -206,7 +215,7 @@
 
 #beat{
     visibility: hidden;
-    background-color: white;
+    background-color: #FB928E;
     border: 1px solid black;
     height: 20vh;
     width: 20vw;
@@ -218,7 +227,7 @@
 
 #leave{
     visibility: hidden;
-    background-color: white;
+    background-color: #FB928E;
     border: 1px solid black;
     height: 20vh;
     width: 20vw;
