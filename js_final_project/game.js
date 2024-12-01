@@ -298,6 +298,8 @@ function endGoal()
         document.getElementById("no").addEventListener("click", e=>{
             // will close the game if player chooses no
             // kick them out!
+            document.getElementById("won").style.visibility = "hidden";
+            document.getElementById("leave").style.visibility = "visible";
             self.close();
         })
         // need to reset the level and prompt the player to continue
@@ -322,6 +324,9 @@ function endGoal()
         document.getElementById("exit").addEventListener("click", e=>{
             // will close the game if player chooses no
             // kick them out!
+            // in case the game doesnt kick them out, it will to the player to exit the page.
+            document.getElementById("won").style.visibility = "hidden";
+            document.getElementById("leave").style.visibility = "visible";
             self.close();
         })
     }

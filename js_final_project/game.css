@@ -213,7 +213,17 @@
     position: absolute;
     left: 10vw;
     top: 20vh;
-    text-align: center;
-    
-    
+    text-align: center;   
+}
+
+#leave{
+    visibility: hidden;
+    background-color: white;
+    border: 1px solid black;
+    height: 20vh;
+    width: 20vw;
+    position: absolute;
+    left: 10vw;
+    top: 20vh;
+    text-align: center;   
 }
