@@ -32,6 +32,17 @@ wall_7_position = document.getElementById("wall7").getBoundingClientRect();
 let wall_8_position = {};
 wall_8_position = document.getElementById("wall8").getBoundingClientRect();
 
+// level walls
+let wall_9_position = {};
+wall_9_position = document.getElementById("wall9").getBoundingClientRect();
+let wall_10_position = {}; 
+wall_10_position = document.getElementById("wall10").getBoundingClientRect();
+let wall_11_position = {};
+wall_11_position = document.getElementById("wall11").getBoundingClientRect();
+let wall_12_position = {};
+wall_12_position = document.getElementById("wall12").getBoundingClientRect();
+let wall_13_position = {};
+wall_13_position = document.getElementById("wall13").getBoundingClientRect();
 
 // border for the content
 let content_border = {};
@@ -83,18 +94,27 @@ function move(direction)
     // player can now move usinsg arrow keys
     console.log(direction);
     console.log(char_position);
-    if(direction == "L") // move to the left 
+    //REMINDER, NEED TO MAKE SURE PLAYER CAN'T MOVE AFTER TIME RUNS OUT
+    if((char_position.top == end_position.top && char_position.left == end_position.left) || time_left <= 0) 
+    {
+        // if the player has reached the end or time has run out, they can no longer move!
+    }
+    else if(direction == "L") // move to the left 
     {
         // check if this would exceed the bound, 
         if((char_position.left - vhVwToPx(steps)) <= (content_border.left))
         {
-            // do nothing, it would exceed the boundary
+            // do nothing, it would exceed the boundary of the game
         }
-        else if(level2 && !(level3) && (/**wall two */ (char_position.left - vhVwToPx(steps) <= wall_2_position.right && char_position.bottom == wall_2_position.bottom) || /**wall 4 */(char_position.left - vhVwToPx(steps) <= wall_4_position.right && char_position.bottom == wall_4_position.bottom) || /**wall 6 */(char_position.left - vhVwToPx(steps) <= wall_6_position.right && char_position.bottom == wall_6_position.bottom) /**wall8 */ || (char_position.left - vhVwToPx(steps) <= wall_8_position.right && char_position.bottom == wall_8_position.bottom))) 
+        else if(level2 && !(level3) && (/**wall 9 */(Math.round(char_position.left - vhVwToPx(steps)) <= Math.round(wall_9_position.right) && Math.round(char_position.top) >= Math.round(wall_9_position.top)) /**wall 10 */ || (Math.round(char_position.left - vhVwToPx(steps)) <= Math.round(wall_10_position.right) && Math.round(char_position.bottom) <= Math.round(wall_10_position.bottom) && (Math.round(char_position.left) >= Math.round(wall_10_position.right) && Math.round(char_position.right) <= Math.round(wall_11_position.left))) /**wall 11 */ || (Math.round(char_position.left - vhVwToPx(steps)) <= Math.round(wall_11_position.right) && Math.round(char_position.top) >= Math.round(wall_11_position.top) && (Math.round(char_position.left) >= Math.round(wall_11_position.right) && Math.round(char_position.right) <= Math.round(wall_12_position.left))) /**wall 12 */ || (Math.round(char_position.left - vhVwToPx(steps)) <= Math.round(wall_12_position.right) && Math.round(char_position.bottom) <= Math.round(wall_12_position.bottom) && (Math.round(char_position.left) >= Math.round(wall_12_position.right) && Math.round(char_position.right) <= Math.round(wall_13_position.left)))))
         {
-            // do nothing, since it would run the player must no phase through the wall
+            // this is essentially a bunch of statements that check if the player is running into a wall or not for level 2, there is probably an easier way to do this but this was my first thought.
         }
-        else
+        else if((level3) && (/**wall two */ (char_position.left - vhVwToPx(steps) <= wall_2_position.right && char_position.bottom == wall_2_position.bottom) || /**wall 4 */(char_position.left - vhVwToPx(steps) <= wall_4_position.right && char_position.bottom == wall_4_position.bottom) || /**wall 6 */(char_position.left - vhVwToPx(steps) <= wall_6_position.right && char_position.bottom == wall_6_position.bottom) /**wall8 */ || (char_position.left - vhVwToPx(steps) <= wall_8_position.right && char_position.bottom == wall_8_position.bottom))) 
+        {
+            // this is essentially a bunch of statements that check if the player is running into a wall or not for level 3, there is probably an easier way to do this but this was my first thought.
+        }
+        else // move left, nothing blocking the player.
         {
             char_properties.leftRight -= steps;
             char_properties.elem.style.left = `${char_properties.leftRight}vw`;
@@ -107,11 +127,15 @@ function move(direction)
         {
             // do nothing, would exceed boundary
         }
-        else if(level2 && !(level3) && ((/**wall 1*/((char_position.right + vhVwToPx(steps)) >= wall_1_position.left) && char_position.bottom == wall_1_position.bottom) || /**wall 3*/((char_position.right + vhVwToPx(steps)) >= wall_3_position.left && Math.round(char_position.bottom) == Math.round(wall_3_position.bottom)) /**wall 5 */ || ((char_position.right + vhVwToPx(steps)) >= wall_5_position.left && Math.round(char_position.bottom) == Math.round(wall_5_position.bottom)) /**wall 7 */|| ((char_position.right + vhVwToPx(steps)) >= wall_7_position.left && Math.round(char_position.bottom) == Math.round(wall_7_position.bottom)))) // checking if player will run into a wall, don't want them to phase through. There's probably an easier way to do this but this all I can think of right now
+        else if(level2 && !(level3) && (/**wall 9*/(Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_9_position.left) && Math.round(char_position.top) >= Math.round(wall_9_position.top) && Math.round(char_position.right) <= Math.round(wall_9_position.left)) /***wall 10 */ || (Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_10_position.left) && Math.round(char_position.bottom) <= Math.round(wall_10_position.bottom) && Math.round(char_position.left) >= Math.round(wall_9_position.right) && Math.round(char_position.right) <= Math.round(wall_10_position.left)) /**wall 11 */ || (Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_11_position.left) && Math.round(char_position.top) >= Math.round(wall_11_position.top) && Math.round(char_position.left) >= Math.round(wall_10_position.right) && Math.round(char_position.right) <= Math.round(wall_11_position.left)) /** wall 12 */ || (Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_12_position.left) && Math.round(char_position.bottom) <= Math.round(wall_12_position.bottom) && Math.round(char_position.left) >= Math.round(wall_11_position.right) && Math.round(char_position.right) <= Math.round(wall_12_position.left)) /**wall 13 */ || (Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_13_position.left) && Math.round(char_position.top) >= Math.round(wall_13_position.top) && Math.round(char_position.left) >= Math.round(wall_12_position.right) && Math.round(char_position.right) <= Math.round(wall_13_position.left))))
         {
-            // do nothing, want to run into wall
+            // this is essentially a bunch of statements that check if the player is running into a wall or not for level 2, there is probably an easier way to do this but this was my first thought.
         }
-        else
+        else if((level3) && ((/**wall 1*/((char_position.right + vhVwToPx(steps)) >= wall_1_position.left) && char_position.bottom == wall_1_position.bottom) || /**wall 3*/((char_position.right + vhVwToPx(steps)) >= wall_3_position.left && Math.round(char_position.bottom) == Math.round(wall_3_position.bottom)) /**wall 5 */ || ((char_position.right + vhVwToPx(steps)) >= wall_5_position.left && Math.round(char_position.bottom) == Math.round(wall_5_position.bottom)) /**wall 7 */|| ((char_position.right + vhVwToPx(steps)) >= wall_7_position.left && Math.round(char_position.bottom) == Math.round(wall_7_position.bottom)))) // checking if player will run into a wall, don't want them to phase through. There's probably an easier way to do this but this all I can think of right now
+        {
+           // this is essentially a bunch of statements that check if the player is running into a wall or not for level 3, there is probably an easier way to do this but this was my first thought.
+        }
+        else // move right, nothing blocking the player
         {
             char_properties.leftRight += steps;
             char_properties.elem.style.left = `${char_properties.leftRight}vw`;
@@ -122,18 +146,21 @@ function move(direction)
     }
     else if(direction == "D") // move down 
     {
+        
         if(char_position.bottom + vhVwToPx(steps) >= content_border.bottom)
         {
-            //do nothing
-            console.log("border!")
-        }
-        else if(level2 && !(level3) && /**wall 1 */(((char_position.right >= wall_1_position.left) && (char_position.bottom + vhVwToPx(steps) >= wall_1_position.top)) /**wall 2 */ || ((char_position.bottom + vhVwToPx(steps) >= wall_2_position.top) && (Math.round(char_position.left) < Math.round(wall_2_position.right)) && (Math.round(char_position.bottom) == Math.round(wall_2_position.top))) /**wall 3 boundaries */|| ((char_position.right >= wall_3_position.left) && (Math.round(char_position.bottom + vhVwToPx(steps)) >= Math.round(wall_3_position.top)) && Math.round(char_position.bottom) >= Math.round(wall_3_position.top) && Math.round(char_position.top) <= Math.round(wall_4_position.bottom)) /**wall 4 */ || ((char_position.bottom + vhVwToPx(steps) >= wall_4_position.top) && (Math.round(char_position.left) < Math.round(wall_4_position.right)) && (Math.round(char_position.bottom) >= Math.round(wall_4_position.top) && Math.round(char_position.top) <= Math.round(wall_5_position.bottom))) /**wall 5 */ || ((char_position.right >= wall_5_position.left) && (Math.round(char_position.bottom + vhVwToPx(steps)) >= Math.round(wall_5_position.top)) && Math.round(char_position.bottom) >= Math.round(wall_5_position.top) && Math.round(char_position.top) <= Math.round(wall_6_position.bottom)) /**wall 6 */ || ((char_position.bottom + vhVwToPx(steps) >= wall_6_position.top) && (Math.round(char_position.left) < Math.round(wall_6_position.right)) && (Math.round(char_position.bottom) >= Math.round(wall_6_position.top) && Math.round(char_position.top) <= Math.round(wall_7_position.bottom))) /**wall 7 */ || ((char_position.right >= wall_7_position.left) && (Math.round(char_position.bottom + vhVwToPx(steps)) >= Math.round(wall_7_position.top)) && Math.round(char_position.bottom) >= Math.round(wall_7_position.top) && Math.round(char_position.top) <= Math.round(wall_8_position.bottom))))
+            //do nothing, player would run into games border
+        } 
+        else if(level2 && !(level3) && (/**wall 9 */ Math.round(char_position.right) == Math.round(wall_9_position.right) /**wall 11 */ || Math.round(char_position.right) == Math.round(wall_11_position.right) /**wall 13 */ || Math.round(char_position.right) == Math.round(wall_13_position.right)))
         {
-            console.log("HEREEE!!!")
+            // this is essentially a bunch of statements that check if the player is running into a wall or not for level 2, there is probably an easier way to do this but this was my first thought.
         }
-        else
+        else if((level3) && /**wall 1 */(((char_position.right >= wall_1_position.left) && (char_position.bottom + vhVwToPx(steps) >= wall_1_position.top)) /**wall 2 */ || ((char_position.bottom + vhVwToPx(steps) >= wall_2_position.top) && (Math.round(char_position.left) < Math.round(wall_2_position.right)) && (Math.round(char_position.bottom) == Math.round(wall_2_position.top))) /**wall 3 boundaries */|| ((char_position.right >= wall_3_position.left) && (Math.round(char_position.bottom + vhVwToPx(steps)) >= Math.round(wall_3_position.top)) && Math.round(char_position.bottom) >= Math.round(wall_3_position.top) && Math.round(char_position.top) <= Math.round(wall_4_position.bottom)) /**wall 4 */ || ((char_position.bottom + vhVwToPx(steps) >= wall_4_position.top) && (Math.round(char_position.left) < Math.round(wall_4_position.right)) && (Math.round(char_position.bottom) >= Math.round(wall_4_position.top) && Math.round(char_position.top) <= Math.round(wall_5_position.bottom))) /**wall 5 */ || ((char_position.right >= wall_5_position.left) && (Math.round(char_position.bottom + vhVwToPx(steps)) >= Math.round(wall_5_position.top)) && Math.round(char_position.bottom) >= Math.round(wall_5_position.top) && Math.round(char_position.top) <= Math.round(wall_6_position.bottom)) /**wall 6 */ || ((char_position.bottom + vhVwToPx(steps) >= wall_6_position.top) && (Math.round(char_position.left) < Math.round(wall_6_position.right)) && (Math.round(char_position.bottom) >= Math.round(wall_6_position.top) && Math.round(char_position.top) <= Math.round(wall_7_position.bottom))) /**wall 7 */ || ((char_position.right >= wall_7_position.left) && (Math.round(char_position.bottom + vhVwToPx(steps)) >= Math.round(wall_7_position.top)) && Math.round(char_position.bottom) >= Math.round(wall_7_position.top) && Math.round(char_position.top) <= Math.round(wall_8_position.bottom))))
         {
-            console.log("hiiiii")
+            // this is essentially a bunch of statements that check if the player is running into a wall or not for level 3, there is probably an easier way to do this but this was my first thought.
+        }
+        else // move down, nothing blocking the player
+        {
             char_properties.upDown -= steps;
             char_properties.elem.style.bottom = `${char_properties.upDown}vh`;
             // console.log(char_properties.elem.style.top);
@@ -146,11 +173,15 @@ function move(direction)
         {
             //do nothing, would exceed boundaries
         }
-        else if(level2 && !(level3) && (/*wall two */(char_position.top + vhVwToPx(steps) >= wall_2_position.bottom && char_position.right < wall_2_position.right && char_position.bottom != wall_1_position.bottom) /*wall three */ || ((Math.round(char_position.top + vhVwToPx(steps)) >= Math.round(wall_3_position.bottom) && Math.round(char_position.left) >= Math.round(wall_3_position.left) && (Math.round(char_position.bottom) >= Math.round(wall_2_position.top) && Math.round(char_position.top) <= Math.round(wall_3_position.bottom)))) /**wall 4 */|| (char_position.top + vhVwToPx(steps) >= wall_4_position.bottom && char_position.right < wall_4_position.right && (Math.round(char_position.bottom) >= Math.round(wall_5_position.top) && Math.round(char_position.top) <= Math.round(wall_4_position.bottom))) /**wall 5 */ || ((Math.round(char_position.top + vhVwToPx(steps)) >= Math.round(wall_5_position.bottom) && Math.round(char_position.left) >= Math.round(wall_5_position.left) && (Math.round(char_position.bottom) >= Math.round(wall_4_position.top) && Math.round(char_position.top) <= Math.round(wall_5_position.bottom)))) /**wall 6*/ || (char_position.top + vhVwToPx(steps) >= wall_6_position.bottom && char_position.right < wall_6_position.right && (Math.round(char_position.bottom) >= Math.round(wall_7_position.top) && Math.round(char_position.top) <= Math.round(wall_6_position.bottom))) /**wall 7 */ || ((Math.round(char_position.top + vhVwToPx(steps)) >= Math.round(wall_7_position.bottom) && Math.round(char_position.left) >= Math.round(wall_7_position.left) && (Math.round(char_position.bottom) >= Math.round(wall_6_position.top) && Math.round(char_position.top) <= Math.round(wall_7_position.bottom)))) /**wall 8 */ || (char_position.top + vhVwToPx(steps) >= wall_8_position.bottom && char_position.right < wall_8_position.right && (Math.round(char_position.top) <= Math.round(wall_8_position.bottom)))))
+        else if(level2 && !(level3) && (/**wall 10 */ Math.round(char_position.left) == Math.round(wall_10_position.left) /**wall 12 */ || Math.round(char_position.left) == Math.round(wall_12_position.left)))
         {
-
+            // this is essentially a bunch of statements that check if the player is running into a wall or not for level 2, there is probably an easier way to do this but this was my first thought.
         }
-        else
+        else if((level3) && (/*wall two */(char_position.top + vhVwToPx(steps) >= wall_2_position.bottom && char_position.right < wall_2_position.right && char_position.bottom != wall_1_position.bottom) /*wall three */ || ((Math.round(char_position.top + vhVwToPx(steps)) >= Math.round(wall_3_position.bottom) && Math.round(char_position.left) >= Math.round(wall_3_position.left) && (Math.round(char_position.bottom) >= Math.round(wall_2_position.top) && Math.round(char_position.top) <= Math.round(wall_3_position.bottom)))) /**wall 4 */|| (char_position.top + vhVwToPx(steps) >= wall_4_position.bottom && char_position.right < wall_4_position.right && (Math.round(char_position.bottom) >= Math.round(wall_5_position.top) && Math.round(char_position.top) <= Math.round(wall_4_position.bottom))) /**wall 5 */ || ((Math.round(char_position.top + vhVwToPx(steps)) >= Math.round(wall_5_position.bottom) && Math.round(char_position.left) >= Math.round(wall_5_position.left) && (Math.round(char_position.bottom) >= Math.round(wall_4_position.top) && Math.round(char_position.top) <= Math.round(wall_5_position.bottom)))) /**wall 6*/ || (char_position.top + vhVwToPx(steps) >= wall_6_position.bottom && char_position.right < wall_6_position.right && (Math.round(char_position.bottom) >= Math.round(wall_7_position.top) && Math.round(char_position.top) <= Math.round(wall_6_position.bottom))) /**wall 7 */ || ((Math.round(char_position.top + vhVwToPx(steps)) >= Math.round(wall_7_position.bottom) && Math.round(char_position.left) >= Math.round(wall_7_position.left) && (Math.round(char_position.bottom) >= Math.round(wall_6_position.top) && Math.round(char_position.top) <= Math.round(wall_7_position.bottom)))) /**wall 8 */ || (char_position.top + vhVwToPx(steps) >= wall_8_position.bottom && char_position.right < wall_8_position.right && (Math.round(char_position.top) <= Math.round(wall_8_position.bottom)))))
+        {
+            // this is essentially a bunch of statements that check if the player is running into a wall or not for level 3, there is probably an easier way to do this but this was my first thought.
+        }
+        else // move up, nothing blocking the player
         {
             char_properties.upDown += steps;
             char_properties.elem.style.bottom = `${char_properties.upDown}vh`;
@@ -204,8 +235,19 @@ function endGoal()
         // clear the set interval
         clearInterval(goal_interval);
         clearInterval(time_interval);
+        goal_interval = null;
+        time_interval = null;
         // make win screen visible
-        document.getElementById("won").style.visibility = "visible";
+        if(level3) // player beat the game!!
+        {
+             // REMINDER: MAKE A WINNING SCREEN FOR BEATING THE GAME!!!  
+            document.getElementById("beat").style.visibility = "visible";
+
+        }
+        else // continue screen
+        {
+            document.getElementById("won").style.visibility = "visible";
+        }
         // REMINDER: MAKE A WINNING SCREEN FOR BEATING THE GAME!!!  
         // event listener for yes and no buttons
 
@@ -213,19 +255,43 @@ function endGoal()
             // in this function, the winning screen would be made hidden, and the next level would be call
             // have a function that sets up the level
             document.getElementById("won").style.visibility = "hidden";
+            
             if(!(level2))
             {
-                level2 = true;
-                document.getElementById("level2").style.visibility = "visible";
+                level2 = true; // flag for level 2
+                document.getElementById("level2").style.visibility = "visible"; // makes level 2 visible
+                time_interval = setInterval(() =>{
+                    time_left--;
+                    if(time_left >= 0)
+                    {
+                        document.getElementById("time").innerHTML = time_left;
+                    }
+                }, 1000);
+                goal_interval = setInterval(() =>{
+                    endGoal();
+                }, 100);
             }
-            else if(!(level3))
+            else if(!(level3)) // checks if player has reached level 3 yet
             {
-                level3 = true;
-                document.getElementById("level2").style.visibility = "hidden";
-                document.getElementById("level3").style.visibility = "visible";
-            }
+                level3 = true; // flag for level 3
+                document.getElementById("level2").style.visibility = "hidden"; // makes level 2 hidden
+                document.getElementById("level3").style.visibility = "visible"; // makes level 3 visible
+                // sets up the timer and checking if the player has made it
+                // if the interval is placed outside the if statement, it will call itself twice and make the timer go down by 2 each second, hence why it's inside here. :)
+                time_interval = setInterval(() =>{
+                    time_left--;
+                    if(time_left >= 0)
+                    {
+                        document.getElementById("time").innerHTML = time_left;
+                    }
+                }, 1000);
+                goal_interval = setInterval(() =>{
+                    endGoal();
+                }, 100);
 
-            setUp();
+            }
+            
+
             reset();
         })
 
@@ -240,12 +306,16 @@ function endGoal()
     if(time_left == 0)
     {
         // lost screen is visible
+        clearInterval(goal_interval);
+        clearInterval(time_interval);
         document.getElementById("lost").style.visibility = "visible";
 
         document.getElementById("again").addEventListener("click", e=>{
             // in this function, the winning screen would be made hidden, and the next level would be call
             // have a function that sets up the level
             document.getElementById("lost").style.visibility = "hidden";
+
+            setUp();
             reset();
         })
 
@@ -259,7 +329,7 @@ function endGoal()
     // more to be done with this function!!!
 }
 
-// function that will set up each level
+// function that sets up interval for the timer and checking the goal
 function setUp()
 {
     // will set up the intervals
@@ -275,19 +345,7 @@ function setUp()
     }, 100);
 }
 
-// use set interval to keep track of time
-// 1000 milliseconds in a second
-
-
-
-// // function for enemy
-
-// // use set interval to check the players position and if they've reached the end
-// // check if they've reach the end every 100ms
-// let goal_interval = setInterval(() =>{
-//     endGoal();
-// }, 100); 
-
+// to get the timer going!
 setUp();
 
 // code for moving
