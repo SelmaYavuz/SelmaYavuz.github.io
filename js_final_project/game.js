@@ -59,7 +59,7 @@ char_properties.elem = document.getElementById("chara");
 const steps = 4;
 
 // variable for keeping track of time
-let time_left = 16;
+let time_left = 15;
 let goal_interval;
 let time_interval;
 
@@ -127,7 +127,7 @@ function move(direction)
         {
             // do nothing, would exceed boundary
         }
-        else if(level2 && !(level3) && (/**wall 9*/(Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_9_position.left) && Math.round(char_position.top) >= Math.round(wall_9_position.top) && Math.round(char_position.right) <= Math.round(wall_9_position.left)) /***wall 10 */ || (Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_10_position.left) && Math.round(char_position.bottom) <= Math.round(wall_10_position.bottom) && Math.round(char_position.left) >= Math.round(wall_9_position.right) && Math.round(char_position.right) <= Math.round(wall_10_position.left)) /**wall 11 */ || (Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_11_position.left) && Math.round(char_position.top) >= Math.round(wall_11_position.top) && Math.round(char_position.left) >= Math.round(wall_10_position.right) && Math.round(char_position.right) <= Math.round(wall_11_position.left)) /** wall 12 */ || (Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_12_position.left) && Math.round(char_position.bottom) <= Math.round(wall_12_position.bottom) && Math.round(char_position.left) >= Math.round(wall_11_position.right) && Math.round(char_position.right) <= Math.round(wall_12_position.left)) /**wall 13 */ || (Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_13_position.left) && Math.round(char_position.top) >= Math.round(wall_13_position.top) && Math.round(char_position.left) >= Math.round(wall_12_position.right) && Math.round(char_position.right) <= Math.round(wall_13_position.left))))
+        else if(level2 && !(level3) && (/**wall 9*/(Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_9_position.left) && Math.round(char_position.top) >= Math.round(wall_9_position.top) && Math.round(char_position.right) <= Math.round(wall_9_position.left)) /***wall 10 */ || (Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_10_position.left) && Math.round(char_position.bottom) <= Math.round(wall_10_position.bottom) && Math.round(char_position.left) >= Math.round(wall_9_position.right) && Math.round(char_position.right) <= Math.round(wall_10_position.left))/**wall 11 */ || (Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_11_position.left) && Math.round(char_position.top) >= Math.round(wall_11_position.top) && Math.round(char_position.left) >= Math.round(wall_10_position.right) && Math.round(char_position.right) <= Math.round(wall_11_position.left)) /** wall 12 */ || (Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_12_position.left) && Math.round(char_position.bottom) <= Math.round(wall_12_position.bottom) && Math.round(char_position.left) >= Math.round(wall_11_position.right) && Math.round(char_position.right) <= Math.round(wall_12_position.left)) /**wall 13 */ || (Math.round(char_position.right + vhVwToPx(steps)) >= Math.round(wall_13_position.left) && Math.round(char_position.top) >= Math.round(wall_13_position.top) && Math.round(char_position.left) >= Math.round(wall_12_position.right) && Math.round(char_position.right) <= Math.round(wall_13_position.left))))
         {
             // this is essentially a bunch of statements that check if the player is running into a wall or not for level 2, there is probably an easier way to do this but this was my first thought.
         }
@@ -191,6 +191,7 @@ function move(direction)
     }
     char_position = document.getElementById("chara").getBoundingClientRect();
     console.log(char_position);
+
 }
 // function for checking end goal
 function endGoal()
@@ -214,7 +215,7 @@ function endGoal()
     content_border = document.getElementById("content").getBoundingClientRect();
 
     // updating all the walls in case the player decides to resize the screen.
-    if(level2)
+    if(level3)
     {
         wall_1_position = document.getElementById("wall1").getBoundingClientRect();
         wall_2_position = document.getElementById("wall2").getBoundingClientRect();
@@ -225,12 +226,20 @@ function endGoal()
         wall_7_position = document.getElementById("wall7").getBoundingClientRect();
         wall_8_position = document.getElementById("wall8").getBoundingClientRect();
     }
+    if(level2)
+    {
+        wall_9_position = document.getElementById("wall9").getBoundingClientRect();
+        wall_10_position = document.getElementById("wall10").getBoundingClientRect();
+        wall_11_position = document.getElementById("wall11").getBoundingClientRect();
+        wall_12_position = document.getElementById("wall12").getBoundingClientRect();
+        wall_13_position = document.getElementById("wall13").getBoundingClientRect();
+    }
     
 
     // end_position doesn't need to update since it should be the same
 
     // next compare char_position to the end_goal to check if the player made it to the end!
-    if(char_position.top == end_position.top && char_position.left == end_position.left)
+    if((Math.round(char_position.top) == Math.round(end_position.top) && Math.round(char_position.left) == Math.round(end_position.left)))
     {
         // clear the set interval
         clearInterval(goal_interval);
@@ -351,7 +360,16 @@ function setUp()
 }
 
 // to get the timer going!
-setUp();
+time_interval = setInterval(() =>{
+    time_left--;
+    if(time_left >= 0)
+    {
+        document.getElementById("time").innerHTML = time_left;
+    }
+}, 1000);
+goal_interval = setInterval(() =>{
+    endGoal();
+}, 100);
 
 // code for moving
 document.addEventListener("keydown", e=>{
